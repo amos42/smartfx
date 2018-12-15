@@ -1,0 +1,77 @@
+/*
+============================================================================
+ Name		: BUP_Test.mmp
+ Author	  : Amos
+ Copyright   : Your copyright notice
+ Description : This is the project specification file for BUP_Test.
+============================================================================
+*/
+
+
+TARGET			BUP_Test_0xED86F74E.exe
+TARGETTYPE		exe
+UID		  0x100039CE 0xED86F74E
+
+LANG SC
+
+VENDORID	  	  0
+SECUREID		  0xED86F74E
+CAPABILITY	  	  ReadUserData
+
+#ifdef ENABLE_ABIV2_MODE
+  DEBUGGABLE
+#endif
+
+
+SOURCEPATH		..\data
+
+START RESOURCE	BUP_Test.rss
+HEADER
+TARGET BUP_Test_0xED86F74E
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	BUP_Test_reg.rss
+TARGET BUP_Test_0xED86F74E_reg
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+
+USERINCLUDE	   ..\inc
+USERINCLUDE    ..\help
+
+SYSTEMINCLUDE	 \epoc32\include
+
+LIBRARY			eikctl.lib eikcoctl.lib uiklaf.lib form.lib egul.lib gdi.lib
+LIBRARY			euser.lib apparc.lib cone.lib eikcore.lib avkon.lib commonengine.lib efsrv.lib 
+LIBRARY			estor.lib aknnotify.lib hlplch.lib libc.lib fbscli.lib bitgdi.lib libpthread.lib hal.lib libm.lib lbs.lib
+LIBRARY			mediaclientaudiostream.lib mediaclientaudio.lib
+
+LIBRARY			RemConCoreApi.lib RemConInterfaceBase.lib ptiengine.lib 					// to handle media key events ( vol up/down, play, stop.. )
+
+STATICLIBRARY COMP_ExtPkg.lib COMP_BasePkg.lib BUP.lib SYSAPI_OEM.lib SYSAPI.lib BUP_OEM.lib A_Res.lib freetypeLib.lib GrpX.lib B_NMEA.lib
+
+SYSTEMINCLUDE +\include
+SYSTEMINCLUDE +\include\stdapis
+SYSTEMINCLUDE +\include\stdapis\stlport
+SYSTEMINCLUDE +\include\libc
+
+USERINCLUDE	 ..\..\..\src
+SOURCEPATH		..\src
+SOURCE			BUP_Test.cpp
+SOURCE			BUP_TestApplication.cpp
+SOURCE			BUP_TestAppView.cpp
+SOURCE			BUP_TestAppUi.cpp
+SOURCE			BUP_TestDocument.cpp
+
+USERINCLUDE	 ..\..\..\..\..\inc
+USERINCLUDE	 ..\..\..\..\..\SYSAPI\inc
+USERINCLUDE	 ..\..\..\..\..\UI_Base\inc
+USERINCLUDE	 ..\..\..\..\..\UI_Base\BUP\inc
+USERINCLUDE	 ..\..\..\..\..\UI_BASE\Component\BasePkg\inc
+USERINCLUDE	 ..\..\..\..\..\UI_BASE\Component\ExtPkg\inc
+
+SOURCEPATH ..\..\..\src
+SOURCE APP_Entry.cpp Global.c MainWnd.c SettingWnd.c TestWnd.c SoundTestWnd.c EqSetWnd.c
+
+// End of File

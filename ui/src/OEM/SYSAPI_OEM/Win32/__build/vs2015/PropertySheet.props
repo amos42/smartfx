@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BASEDEF_DIR>../../../../../BaseDef</BASEDEF_DIR>
+    <SYSAPI_DIR>../../../../../SYSAPI</SYSAPI_DIR>
+    <A_UTIL_DIR>../../../../../EXT_LIB/A_Util</A_UTIL_DIR>
+    <B_NMEA_DIR>../../../../../EXT_LIB/B_NMEA</B_NMEA_DIR>
+    <B_COMM_DIR>../../../../../EXT_LIB/B_COMM</B_COMM_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="BASEDEF_DIR">
+      <Value>$(BASEDEF_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SYSAPI_DIR">
+      <Value>$(SYSAPI_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_UTIL_DIR">
+      <Value>$(A_UTIL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="B_NMEA_DIR">
+      <Value>$(B_NMEA_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="B_COMM_DIR">
+      <Value>$(B_COMM_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

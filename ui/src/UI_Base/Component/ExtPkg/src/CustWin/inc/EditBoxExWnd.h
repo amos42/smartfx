@@ -1,0 +1,30 @@
+
+#ifndef __EDITBOXEXWND_H_
+#define __EDITBOXEXWND_H_
+
+
+#ifndef __A_UIENG_H_
+#include "A_UIENG.h"
+#endif
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#define EXTPKG_CUSTWIN_EDITBOX     _AT("ExtPkg.CustWin.EditBoxWnd")
+
+
+atBOOL      RegistEditBoxExWndClass(void);
+void        UnregistEditBoxExWndClass(void);
+
+atHWINDOW	CreateEditBoxExWnd( atHWINDOW hParentWnd, int id, atLPTSTR szTitle, atLPTSTR szMsg, atLPTSTR szText, atBOOL bUseOIC );
+
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif // __EDITBOXWND_H_

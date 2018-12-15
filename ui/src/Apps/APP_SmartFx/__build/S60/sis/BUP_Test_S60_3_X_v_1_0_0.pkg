@@ -1,0 +1,37 @@
+; Installation file for BUP_Test application
+;
+; This is an auto-generated PKG file by Carbide.
+; This file uses variables specific to Carbide builds that will not work
+; on command-line builds. If you want to use this generated PKG file from the
+; command-line tools you will need to modify the variables with the appropriate
+; values: $(EPOCROOT), $(PLATFORM), $(TARGET)
+;
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"BUP_Test"},(0xED86F74E),1,0,0
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+;Files to install
+;You should change the source paths to match that of your environment
+;<source> <destination>
+"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\BUP_Test_0xED86F74E.exe"		-"!:\sys\bin\BUP_Test_0xED86F74E.exe"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\BUP_Test_0xED86F74E.rsc"		-"!:\resource\apps\BUP_Test_0xED86F74E.rsc"
+"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\BUP_Test_0xED86F74E_reg.rsc"	-"!:\private\10003a3f\import\apps\BUP_Test_0xED86F74E_reg.rsc"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\BUP_Test_0xED86F74E.mif" -"!:\resource\apps\BUP_Test_0xED86F74E.mif"
+"..\help\BUP_Test_0xED86F74E.hlp"							 -"!:\resource\help\BUP_Test_0xED86F74E.hlp"
+
+; Add any installation notes if applicable
+;"BUP_Test.txt"		-"!:\private\ED86F74E\BUP_Test.txt"
+
+;required for application to be covered by backup/restore facility 
+"..\sis\backup_registration.xml"		-"!:\private\ED86F74E\backup_registration.xml"

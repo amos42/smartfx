@@ -1,0 +1,1 @@
+bcc32 -I../../include -I../../../A_Common -D__X86_ -D_DEBUG trifunc.c

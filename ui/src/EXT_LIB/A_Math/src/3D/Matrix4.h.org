@@ -1,0 +1,52 @@
+#ifndef __MATRIX4_H_
+#define __MATRIX4_H_
+
+#include "realnum.h"
+
+
+typedef struct tagCOORD4 {
+    union {
+        struct {
+            REAL x, y, z, w;
+        };
+        
+        REAL c[4];
+    };
+} COORD4;
+
+
+typedef struct tagMATRIX4 {
+    union {
+        struct {
+            REAL    _11, _12, _13, _14;
+            REAL    _21, _22, _23, _24;
+            REAL    _31, _32, _33, _34;
+            REAL    _41, _42, _43, _44;
+        };
+        
+        REAL m[4][4];
+    };
+} MATRIX4, *LPMATRIX4;
+
+
+
+
+void MATRIX4_Set( MATRIX4 *m, REAL _11, REAL _12, REAL _13, REAL _14,
+                              REAL _21, REAL _22, REAL _23, REAL _24,
+                              REAL _31, REAL _32, REAL _33, REAL _34,
+                              REAL _41, REAL _42, REAL _43, REAL _44 );
+void MATRIX4_Identity( MATRIX4 *m );
+void MATRIX4_SetTranslate( MATRIX4 *m, REAL tx, REAL ty, REAL tz );
+void MATRIX4_SetTranslator2( MATRIX4 *m, COORD4 *v );
+void MATRIX4_SetScale( MATRIX4 *m, REAL sx, REAL sy, REAL sz );
+void MATRIX4_SetScale2( MATRIX4 *m, COORD4 *v );
+void MATRIX4_SetRotateX( MATRIX4 *m, INT angle );
+void MATRIX4_SetRotateZ( MATRIX4 *m, INT angle );
+void MATRIX4_Add( MATRIX4 *q, MATRIX4 *a, MATRIX4 *b );
+void MATRIX4_Multiply( MATRIX4 *q, MATRIX4 *a, MATRIX4 *b );
+void MATRIX4_Multiply2( MATRIX4 *m, COORD4 *d, COORD4 *s );
+void MATRIX4_GenerateRotator( MATRIX4 *Result, REAL Angle, REAL x, REAL y, REAL z );
+
+
+#endif
+

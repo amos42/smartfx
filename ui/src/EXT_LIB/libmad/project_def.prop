@@ -1,0 +1,20 @@
+APPNAME = mad
+
+type = staticLib
+
+USER_SRCS = src/*.c
+
+USER_DEFS =
+USER_UNDEFS =
+
+USER_LIBS =
+
+USER_OBJS =
+USER_OBJS_ABS =
+
+USER_INC_DIRS = inc \
+    ../../BaseDef/inc
+
+USER_INC_FILES =
+
+USER_LIB_DIRS =

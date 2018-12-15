@@ -1,0 +1,24 @@
+; 테스트 리소스 스크립트
+
+#resname resource.res
+#compress on
+
+main.pal
+hanfont.fnt
+engfont.fnt
+
+Stage1/data1.dat
+Stage1/data2.dat
+Stage1/data3.dat
+Stage1/data4.dat
+
+Stage2/data1.dat
+Stage2/data2.dat
+Stage2/data3.dat
+Stage2/data4.dat
+
+Stage3/data1.dat
+Stage3/data2.dat
+Stage3/data3.dat
+Stage3/data4.dat
+

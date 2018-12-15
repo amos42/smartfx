@@ -1,0 +1,134 @@
+/*
+============================================================================
+ Name		: TornadoS.mmp
+ Author	  : 
+ Copyright   : Your copyright notice
+ Description : This is the project specification file for TornadoS.
+============================================================================
+*/
+
+
+TARGET			TornadoS_0xEBB22191.exe
+TARGETTYPE		exe
+UID		  0x100039CE 0xEBB22191
+LANG SC
+
+VENDORID	  	  0
+SECUREID		  0xEBB22191
+CAPABILITY	  	  Location ReadUserData WriteUserData
+
+
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE
+#endif
+// End of File
+
+/*
+EPOCHEAPSIZE 0x2000000 0x42b0000
+*/
+EPOCSTACKSIZE	 0x14000
+
+SYSTEMINCLUDE +\include
+SYSTEMINCLUDE +\include\stdapis
+SYSTEMINCLUDE +\include\stdapis\stlport
+SYSTEMINCLUDE +\include\libc
+
+
+SOURCEPATH		..\..\s60\data
+
+
+START RESOURCE	TornadoS.rss
+HEADER
+TARGET TornadoS_0xEBB22191
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	TornadoS_reg.rss
+TARGET TornadoS_0xEBB22191_reg
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+
+
+USERINCLUDE  ..\..\S60
+USERINCLUDE	 ..\..\S60\inc
+USERINCLUDE  ..\..\S60\help
+USERINCLUDE  ..\..\S60\src
+USERINCLUDE  ..\..\src\ui
+USERINCLUDE  ..\..\src\ui\uibase
+USERINCLUDE	 ..\..\src
+USERINCLUDE	 ..\..\src\MR
+USERINCLUDE	 ..\..\src\inc
+USERINCLUDE	 ..\..\src\MainFrame
+
+USERINCLUDE	 ..\..\..\..\Core
+USERINCLUDE	 ..\..\..\..\Core\inc
+USERINCLUDE	 ..\..\..\..\Core\Base
+USERINCLUDE	 ..\..\..\..\Core\BGM
+USERINCLUDE	 ..\..\..\..\Core\netDB
+USERINCLUDE	 ..\..\..\..\Core\Route
+USERINCLUDE	 ..\..\..\..\Core\MM
+USERINCLUDE	 ..\..\..\..\Core\DS
+USERINCLUDE	 ..\..\..\..\Core\RP
+USERINCLUDE	 ..\..\..\..\Core\RG
+
+USERINCLUDE	 ..\..\..\..\inc
+USERINCLUDE	 ..\..\..\..\SYSAPI\inc
+USERINCLUDE	 ..\..\..\..\UI_Base\inc
+USERINCLUDE	 ..\..\..\..\UI_Base\A_UIEng\inc
+USERINCLUDE	 ..\..\..\..\Ext_Lib\A_Util\inc
+USERINCLUDE	 ..\..\..\..\Ext_Lib\A3D\inc
+USERINCLUDE	 ..\..\..\..\EXT_LIB\GrpX\inc ..\..\..\..\Ext_Lib\AGG\inc
+USERINCLUDE	 ..\..\..\..\Ext_Lib\A_Math\inc
+USERINCLUDE	 ..\..\..\..\Ext_Lib\libsnd\inc
+USERINCLUDE	 ..\..\..\..\EXT_LIB\Globe3D\inc
+USERINCLUDE	 ..\..\..\..\EXT_LIB\Landmark3D\inc ..\..\..\..\UI_BASE\Component\BasePkg\inc
+USERINCLUDE	 ..\..\..\..\UI_BASE\Component\ExtPkg\inc
+
+//USERINCLUDE	 ..\..\..\..\OEM\SYSAPI_OEM\Symbian
+//USERINCLUDE	 ..\..\..\..\OEM\SYSAPI_OEM\Symbian\OSAL
+
+LIBRARY			eikctl.lib eikcoctl.lib uiklaf.lib form.lib egul.lib gdi.lib
+LIBRARY			euser.lib apparc.lib cone.lib eikcore.lib avkon.lib commonengine.lib efsrv.lib 
+LIBRARY			estor.lib aknnotify.lib hlplch.lib libc.lib fbscli.lib bitgdi.lib libpthread.lib hal.lib libm.lib lbs.lib
+LIBRARY			mediaclientaudiostream.lib mediaclientaudio.lib
+LIBRARY			ptiengine.lib
+LIBRARY			RemConCoreApi.lib RemConInterfaceBase.lib 					// to handle media key events ( vol up/down, play, stop.. )
+ 
+
+SOURCEPATH ..\..\src
+SOURCE Global.c MD\MD_globe.cpp MainFrame\InitThread.cpp MainFrame\MainLogic.cpp MainFrame\MainWnd.cpp MainFrame\ThreadObject.cpp MainFrame\ToolWnd.cpp MainFrame\UIShotDef.cpp MainFrame\UIShotMan.cpp bgDB\API_DisplayView.cpp bgDB\AutoInitColor.cpp bgDB\mapLoader.cpp ui\uiDlgCoordinates.cpp ui\uiDlgDetailInfo.cpp ui\uiDlgDetourNavigate.cpp ui\uiDlgDetour.cpp ui\uiDlgFavorites.cpp ui\uiDlgMakePlanRoute.cpp ui\uiDlgPlanRoute.cpp ui\uiDlgRouteList.cpp ui\uiDlgSearchMenu.cpp ui\uiDlgSetting.cpp ui\uiDlgSendInfo.cpp ui\uiDlgSettingMap.cpp ui\uiDlgSettingMaxMemory.cpp ui\uiDlgTrafficInfo.cpp ui\uibase\uiDlgBase.cpp ui\uibase\uiDlgBaseComp.cpp ui\uiDlgSettingGeneral.cpp ui\uiDlgSettingNavigation.cpp ui\uiDlgSettingCatSelect.cpp ui\uiDlgSettingUsingMap.cpp ui\uiDlgFreeText.cpp ui\uiDlgFreeTextResult.cpp ui\uiDlgPOI.cpp ui\uiDlgPOIResult.cpp ui\uiDlgPOISpell.cpp ui\uiDlgSettingGPSstatus.cpp ui\uiDlgAddr.cpp ui\uiDlgAddrSearchList.cpp ui\uibase\uiDlgSettingList.cpp ui\uibase\uiDlgSettingRadioBtn.cpp ui\uiDlgSettingNetwork.cpp ui\uiDlgRouteBriefing.cpp ui\uibase\uiMessageBox.cpp ui\uibase\uiProcessing.cpp ui\uiDlgHistory.cpp ui\uiDlgSettingAvoidRouteType.cpp ui\uiDlgSettingWarningSpeed.cpp ui\uibase\uiBaseWnd.cpp ui\uibase\uiDlgEditBox.cpp ui\uiDlgFavoriteIcon.cpp ui\uibase\PlanRouteManager.cpp MainFrame\DrivingInfoBar.cpp MainFrame\TopInfoBar.cpp ui\uiDlgSettingGPSSatellite.cpp MainFrame\ToolSubWnd.cpp ui\uiSearchRadar.cpp ..\S60\src\TornadoS.cpp ..\S60\src\TornadoSAppUi.cpp ..\S60\src\TornadoSApplication.cpp ..\S60\src\TornadoSDocument.cpp ..\S60\src\TornadoSAppView.cpp ui\uiDlgTextView.cpp MainFrame\JunctionViewCtl.cpp ui\uibase\SplitViewMan.cpp MainFrame\JVSignPost.cpp MainFrame\SignPost.cpp MainFrame\ParkInfoCtl.cpp ui\uiDlgParkInfoList.cpp ui\uiTBTMode.cpp ui\uiDlgPhoneNumber.cpp ui\uiDlgPhoneNumberList.cpp MainFrame\LainInfoCtl.cpp MainFrame\HighWayCtrl.cpp ui\uiDlgSettingDemoSpeed.cpp MainFrame\MiniDrivingInfo.cpp ui\uiDlgSettingAbout.cpp MainFrame\POIGuideCtrl.cpp ui\uibase\uiBaseCtrl.cpp ui\uibase\uiDlgBaseCtrl.cpp ui\uibase\bmpBtn.cpp ui\uibase\minimap.cpp Util\uiUtil.cpp Camera\CMapCamera.cpp netDB\DB_Common.cpp netDB\DB_Data.cpp MD\MD.cpp 
+ 
+STATICLIBRARY COMP_ExtPkg.lib COMP_BasePkg.lib utilLib.lib netdbLib.lib bgmLib.lib mmLib.lib rpLib.lib routedbLib.lib zlib.lib dsdbLib.lib BUP.lib commLib.lib stlport_s.lib rgLib.lib bnfsndLib.lib SYSAPI_OEM.lib SYSAPI.lib BUP_EXT.lib BUP_OEM.lib A_Res.lib freetypeLib.lib GrpX.lib Globe3D.lib B_NMEA.lib AGG.lib
+STATICLIBRARY libmad.lib Landmark3D.lib 
+
+SOURCEPATH ..\..\src\MD
+SOURCE MD_DBSync.cpp MD_Data.cpp MD_Interface.cpp MD_MapControl.cpp MD_OnPaint.cpp
+
+EPOCHEAPSIZE 0x500000 0x42b0000
+
+
+//SOURCEPATH ..\..\src\ui
+//SOURCE uiDlgEarth3DView.cpp 
+
+SRCDBG
+
+SOURCEPATH ..\..\src\MD
+SOURCE MD_RouteSync.cpp MD_Sync.cpp
+SOURCEPATH ..\..\src\MR
+SOURCE MR.cpp MR_Base.cpp MR_Common.cpp MR_DrawBG.cpp MR_DrawDebug.cpp MR_DrawMap.cpp MR_DrawNet.cpp MR_DrawPOI.cpp MR_Grp.cpp MR_Interface.cpp MR_OEM_BUP.cpp MR_DrawRoad.cpp
+SOURCEPATH ..\..\src\Camera
+SOURCE CMapCamera_Globe.cpp
+SOURCEPATH ..\..\src\MV
+SOURCE MV.cpp MV_Debug.cpp MV_MapControl.cpp MV_OnPaint.cpp
+SOURCEPATH ..\..\src\MR
+SOURCE MR_DrawLandmark.cpp
+SOURCEPATH ..\..\..\..\Core\Base
+SOURCE SNDInterface.cpp
+SOURCEPATH ..\..\src\MD
+SOURCE MD_LandMark.cpp
+SOURCEPATH ..\..\src\MV
+SOURCE MV_Interface.cpp
+SOURCEPATH ..\..\src\Comp
+SOURCE CMP_MapView.cpp MapView_Impl.cpp

@@ -1,0 +1,254 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AGG"=..\..\..\..\EXT_LIB\AGG\_build\Win32\AGG.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "A_Math"=..\..\..\..\EXT_LIB\A_Math\_build\WinPC\A_Math.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "A_RES"=..\..\..\..\EXT_LIB\A_RES\_build\Win32\A_Res.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "A_Util"=..\..\..\..\EXT_LIB\A_Util\_build\WinPC\A_Util.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BUP"=..\..\..\..\UI_Base\A_UIEng\_build\WInPC\A_UIEng.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BUP_EXT"=..\..\..\..\UI_Base\BUP_EXT\_build\WInPC\BUP_EXT.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BUP_Launcher"=.\BUP_Launcher.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name SYSAPI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SYSAPI_OEM_WINPC
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name BUP
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name BUP_OEM_WINPC
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name COMP_BasePkg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name COMP_ExtPkg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GrpX
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name BUP_EXT
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name A_RES
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name B_NMEA
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name B_COMM
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AGG
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name A_Math
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name A_Util
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name freetype
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "BUP_OEM_WINPC"=..\..\..\..\OEM\BUP_OEM\_build\WinPC\BUP_OEM_WinPC.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "B_COMM"=..\..\..\..\EXT_LIB\B_COMM\_build\WinPC\B_Comm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "B_NMEA"=..\..\..\..\EXT_LIB\B_NMEA\_build\WinPC\B_NMEA.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "COMP_BasePkg"=..\..\..\..\UI_Base\Component\BasePkg\_build\winpc\COMP_BasePkg.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "COMP_ExtPkg"=..\..\..\..\UI_Base\Component\ExtPkg\_build\winpc\COMP_ExtPkg.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GrpX"=..\..\..\..\EXT_LIB\GrpX\_build\Win32\GrpX.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SYSAPI"=..\..\..\..\SYSAPI\_build\WInPC\SYSAPI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SYSAPI_OEM_WINPC"=..\..\..\..\OEM\SYSAPI_OEM\_build\WinPC\SYSAPI_OEM_WinPC.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "freetype"="..\..\..\..\EXT_LIB\freetype-2.3.9\__build\winpc\visualc\freetype.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

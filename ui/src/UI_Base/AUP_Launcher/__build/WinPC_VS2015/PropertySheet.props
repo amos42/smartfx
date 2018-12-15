@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BASEDEF_DIR>../../../../BaseDef</BASEDEF_DIR>
+    <SYSAPI_DIR>../../../../SYSAPI</SYSAPI_DIR>
+    <A_MATH_DIR>../../../../EXT_LIB/A_Math</A_MATH_DIR>
+    <GRPX_DIR>../../../../EXT_LIB/Grpx</GRPX_DIR>
+    <A_UIENG_DIR>../../../../UI_Base/A_UIEng</A_UIENG_DIR>
+    <COMP_BASEPKG_DIR>../../../../UI_BASE/Component/BasePkg</COMP_BASEPKG_DIR>
+    <COMP_EXTPKG_DIR>../../../../UI_BASE/Component/ExtPkg</COMP_EXTPKG_DIR>
+    <LIBSND_DIR>../../../../EXT_Lib/libsnd</LIBSND_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="BASEDEF_DIR">
+      <Value>$(BASEDEF_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SYSAPI_DIR">
+      <Value>$(SYSAPI_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_MATH_DIR">
+      <Value>$(A_MATH_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GRPX_DIR">
+      <Value>$(GRPX_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_UIENG_DIR">
+      <Value>$(A_UIENG_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="COMP_BASEPKG_DIR">
+      <Value>$(COMP_BASEPKG_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="COMP_EXTPKG_DIR">
+      <Value>$(COMP_EXTPKG_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LIBSND_DIR">
+      <Value>$(LIBSND_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

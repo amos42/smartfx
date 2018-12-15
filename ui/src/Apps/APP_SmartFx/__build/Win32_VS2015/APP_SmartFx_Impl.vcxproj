@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8820BB25-B92E-4626-9C44-8CB64E76B210}</ProjectGuid>
+    <RootNamespace>APP_SmartFx</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>APP_SmartFx_Impl</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24720.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(SYSAPI_DIR)/inc;$(A_MATH_DIR);../../../../UI_BASE/Component/BasePkg/inc;../../../../UI_BASE/Component/ExtPkg/inc;../../src;../../../../UI_Base/inc;../../../../UI_Base/AUP_Launcher/inc;$(A_UIENG_DIR)/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(SYSAPI_DIR)/inc;$(A_MATH_DIR);../../../../UI_BASE/Component/BasePkg/inc;../../../../UI_BASE/Component/ExtPkg/inc;../../src;../../../../UI_Base/inc;../../../../UI_Base/AUP_Launcher/inc;$(A_UIENG_DIR)/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(SYSAPI_DIR)/inc;$(A_MATH_DIR);../../../../UI_BASE/Component/BasePkg/inc;../../../../UI_BASE/Component/ExtPkg/inc;../../src;../../../../UI_Base/inc;../../../../UI_Base/AUP_Launcher/inc;$(A_UIENG_DIR)/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;UNICODE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>All</AssemblerOutput>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(SYSAPI_DIR)/inc;$(A_MATH_DIR);../../../../UI_BASE/Component/BasePkg/inc;../../../../UI_BASE/Component/ExtPkg/inc;../../src;../../../../UI_Base/inc;../../../../UI_Base/AUP_Launcher/inc;$(A_UIENG_DIR)/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\APP_Entry.c" />
+    <ClCompile Include="..\..\src\Global.c" />
+    <ClCompile Include="..\..\src\MainWnd.c" />
+    <ClCompile Include="..\..\src\Screen_1_descript.c" />
+    <ClCompile Include="..\..\src\Screen_1_divid_exam.c" />
+    <ClCompile Include="..\..\src\Screen_1_question.c" />
+    <ClCompile Include="..\..\src\Screen_1_recover_exam.c" />
+    <ClCompile Include="..\..\src\Screen_1_result.c" />
+    <ClCompile Include="..\..\src\Screen_1_result_2.c" />
+    <ClCompile Include="..\..\src\Screen_2_control.c" />
+    <ClCompile Include="..\..\src\Screen_2_descript.c" />
+    <ClCompile Include="..\..\src\Screen_2_question.c" />
+    <ClCompile Include="..\..\src\Screen_2_read.c" />
+    <ClCompile Include="..\..\src\Screen_2_result.c" />
+    <ClCompile Include="..\..\src\Screen_3_chart.c" />
+    <ClCompile Include="..\..\src\Screen_3_chart_2.c" />
+    <ClCompile Include="..\..\src\Screen_3_image.c" />
+    <ClCompile Include="..\..\src\Screen_3_result.c" />
+    <ClCompile Include="..\..\src\Screen_3_select.c" />
+    <ClCompile Include="..\..\src\Screen_calculate.c" />
+    <ClCompile Include="..\..\src\Screen_information.c" />
+    <ClCompile Include="..\..\src\Screen_setting.c" />
+    <ClCompile Include="..\..\src\ui_entryptr\Launcher_EntryPtr.c" />
+    <ClCompile Include="..\..\src\ui_entryptr\User_ResDump.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\APP_Entry.h" />
+    <ClInclude Include="..\..\src\Global.h" />
+    <ClInclude Include="..\..\src\MainWnd.h" />
+    <ClInclude Include="..\..\src\Screen_1_descript.h" />
+    <ClInclude Include="..\..\src\Screen_1_divid_exam.h" />
+    <ClInclude Include="..\..\src\Screen_1_question.h" />
+    <ClInclude Include="..\..\src\Screen_1_recover_exam.h" />
+    <ClInclude Include="..\..\src\Screen_1_result.h" />
+    <ClInclude Include="..\..\src\Screen_1_result_2.h" />
+    <ClInclude Include="..\..\src\Screen_2_control.h" />
+    <ClInclude Include="..\..\src\Screen_2_descript.h" />
+    <ClInclude Include="..\..\src\Screen_2_question.h" />
+    <ClInclude Include="..\..\src\Screen_2_read.h" />
+    <ClInclude Include="..\..\src\Screen_2_result.h" />
+    <ClInclude Include="..\..\src\Screen_3_chart.h" />
+    <ClInclude Include="..\..\src\Screen_3_chart_2.h" />
+    <ClInclude Include="..\..\src\Screen_3_image.h" />
+    <ClInclude Include="..\..\src\Screen_3_result.h" />
+    <ClInclude Include="..\..\src\Screen_3_select.h" />
+    <ClInclude Include="..\..\src\Screen_calculate.h" />
+    <ClInclude Include="..\..\src\Screen_information.h" />
+    <ClInclude Include="..\..\src\Screen_setting.h" />
+    <ClInclude Include="..\..\src\ui_entryptr\User_ResDump.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

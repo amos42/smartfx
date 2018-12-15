@@ -1,0 +1,27 @@
+APPNAME = BUP_OEM
+
+type = staticLib
+
+USER_SRCS = src/*.c
+
+USER_DEFS =
+USER_UNDEFS =
+
+USER_LIBS =
+
+USER_OBJS =
+USER_OBJS_ABS =
+
+USER_INC_DIRS = ../../../BaseDef/inc \
+  ../../../UI_Base/A_UIEng/inc \
+  ../../../UI_Base/A_UIEng/OEM_inc \
+  ../../../SYSAPI/inc \
+  ../../../EXT_LIB/A_Util/inc \
+  ../../../EXT_LIB/A_Math/inc \
+  ../../../EXT_LIB/GrpX/inc \
+  ../../../EXT_LIB/A_Res/inc \
+  ../../../EXT_LIB/freetype-2.3.9/include
+
+USER_INC_FILES =
+
+USER_LIB_DIRS =

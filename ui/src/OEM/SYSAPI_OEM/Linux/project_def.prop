@@ -1,0 +1,24 @@
+APPNAME = SYSAPI_OEM
+
+type = staticLib
+
+USER_SRCS = src/*.c
+
+USER_DEFS =
+USER_UNDEFS =
+
+USER_LIBS =
+
+USER_OBJS =
+USER_OBJS_ABS =
+
+USER_INC_DIRS = ../../../BaseDef/inc \
+  ../../../SYSAPI/inc \
+  ../../../SYSAPI/OEM_inc \
+  ../../../EXT_LIB/A_Util/inc \
+  ../../../EXT_LIB/A_Math/inc \
+  ../../../EXT_LIB/GrpX/inc
+
+USER_INC_FILES =
+
+USER_LIB_DIRS =

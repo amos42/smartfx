@@ -1,0 +1,1 @@
+IDS_ABOUTBOX            "Test_ResConv Á¤º¸(&A)..."

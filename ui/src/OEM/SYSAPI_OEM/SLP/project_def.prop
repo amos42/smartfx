@@ -1,0 +1,38 @@
+APPNAME = SYSAPI_OEM
+
+type = staticLib
+
+USER_SRCS = SmartFX/*.c
+
+USER_DEFS =
+USER_UNDEFS =
+
+USER_LIBS =
+
+USER_OBJS =
+USER_OBJS_ABS =
+
+USER_INC_DIRS = ../../BaseDef/inc \
+  ../../SYSAPI/inc \
+  ../../SYSAPI/OEM_inc \
+  ../../EXT_LIB/A_Util/inc \
+  ../../EXT_LIB/A_Math/inc \
+  ../../EXT_LIB/GrpX/inc \
+  ../../../../smartfx/Inc \
+  ../../../../smartfx/Drivers/CMSIS/Include \
+  ../../../../smartfx/Drivers/CMSIS/RTOS/Template \
+  ../../../../smartfx/Drivers/CMSIS/Device/ST/STM32F7xx/Include \
+  ../../../../smartfx/Drivers/STM32F7xx_HAL_Driver/Inc \
+  ../../../../smartfx/Drivers/BSP/STM32746G-Discovery \
+  ../../../../smartfx/Drivers/BSP/Components/Common \
+  ../../../../smartfx/Utilities/Log \
+  ../../../../smartfx/Utilities/Fonts \
+  ../../../../smartfx/Utilities/CPU \
+  ../../../../smartfx/MDK-ARM/RTE \
+  $(KEIL_HOME)/ARM/PACK/ARM/CMSIS/5.0.0-Beta4/CMSIS/Include \
+  $(KEIL_HOME)/ARM/PACK/Keil/STM32F7xx_DFP/2.7.0/CMSIS/Driver \
+  $(KEIL_HOME)/ARM/Pack/Keil/STM32F7xx_DFP/2.7.0/Drivers/STM32F7xx_HAL_Driver/Inc
+
+USER_INC_FILES =
+
+USER_LIB_DIRS =

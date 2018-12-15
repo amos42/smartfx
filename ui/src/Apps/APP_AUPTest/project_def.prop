@@ -1,0 +1,27 @@
+APPNAME = BUP_Test
+
+type = staticLib
+#charset = unicode
+
+USER_SRCS = src/*.c 
+
+USER_DEFS =
+USER_UNDEFS =
+
+USER_LIBS =
+
+USER_OBJS =
+USER_OBJS_ABS =
+
+USER_INC_DIRS = inc \
+  ../../BaseDef/inc \
+  ../../UI_Base/inc \
+  ../../UI_Base/A_UIEng/inc \
+  ../../UI_Base/Component/BasePkg/inc \
+  ../../UI_Base/Component/ExtPkg/inc \
+  ../../SYSAPI/inc \
+  ../BUP_Launcher/inc
+   
+USER_INC_FILES =
+
+USER_LIB_DIRS =

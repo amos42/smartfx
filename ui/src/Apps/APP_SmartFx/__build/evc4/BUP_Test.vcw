@@ -1,0 +1,224 @@
+Microsoft eMbedded Visual Tools Workspace File, Format Version 4.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "A_RES"=..\..\..\..\..\EXT_LIB\A_RES\_build\WinCE4\A_RES.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "A_UIEng"=..\..\..\..\..\UI_Base\A_UIEng\_build\WinCE4\A_UIEng.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BUP_Launcher"=..\..\..\..\BUP_Launcher\_build\WCE4\BUP_Launcher.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name A_RES
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name B_COMM
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name B_NMEA
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name A_UIEng
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name BUP_OEM_WINCE
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name BUP_Test_Impl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name COMP_BasePkg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name COMP_ExtPkg
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name freetype_ce
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name GrpX
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SYSAPI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SYSAPI_OEM
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name LogClientLib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "BUP_OEM_WINCE"=..\..\..\..\..\OEM\BUP_OEM\_build\WinCE4\BUP_OEM_WINCE.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "BUP_Test_Impl"=.\BUP_Test_Impl.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "B_COMM"=..\..\..\..\..\EXT_LIB\B_COMM\_build\WinCE4\B_Comm.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "B_NMEA"=..\..\..\..\..\EXT_LIB\B_NMEA\_build\WinCE4\B_NMEA.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "COMP_BasePkg"=..\..\..\..\..\UI_Base\Component\BasePkg\_build\WinCE4\COMP_BasePkg.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "COMP_ExtPkg"=..\..\..\..\..\UI_Base\Component\ExtPkg\_build\WinCE4\COMP_ExtPkg.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "GrpX"=..\..\..\..\..\EXT_LIB\GrpX\_build\WinCE4\GrpX.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "LogClientLib"=..\..\..\..\..\EXT_LIB\LogClientLib\_build\WinCE4\LogClientLib.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SYSAPI"=..\..\..\..\..\SYSAPI\_build\WinCE4\SYSAPI.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SYSAPI_OEM"=..\..\..\..\..\OEM\SYSAPI_OEM\_build\WinCE4\SYSAPI_OEM.vcp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "freetype_ce"="..\..\..\..\..\EXT_LIB\freetype-2.3.9\__build\wince\evc40\freetype_ce.vcp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

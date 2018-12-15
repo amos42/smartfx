@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{dd825cef-a580-44b0-b636-860f99ee358b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c517ded6-0c4f-4515-a501-741645d0f665}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="CustCtl">
+      <UniqueIdentifier>{74a4716b-505d-4699-9bcb-1007b608cc4e}</UniqueIdentifier>
+      <Extensions>*.c;*.h</Extensions>
+    </Filter>
+    <Filter Include="CustWin">
+      <UniqueIdentifier>{80f47fc8-e686-4a3d-bb73-f4cfbcfdfe09}</UniqueIdentifier>
+      <Extensions>*.c;*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\AEECOMP_BasePkg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_Button.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_CheckBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_DummyCtl.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_EditBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_HSlider.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ImageBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ListBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_Panel.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ProgressBar.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_RadioButton.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_RadioGroup.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ScrollBar.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_SpinBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_StaticBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_VProgressBar.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_VSlider.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustWin\src\DummyWnd.c">
+      <Filter>CustWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustWin\src\EditBoxWnd.c">
+      <Filter>CustWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustWin\src\MemoryInfoWnd.c">
+      <Filter>CustWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustWin\src\MsgBoxWnd.c">
+      <Filter>CustWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustWin\src\WindowInfoWnd.c">
+      <Filter>CustWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_PaintBox.c">
+      <Filter>CustCtl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\AEECOMP_BasePkg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\BasePkg_Ctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\BasePkg_Win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_Button.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_CheckBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_DummyCtl.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_EditBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_HSlider.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ImageBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ListBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_Panel.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ProgressBar.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_RadioButton.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_RadioGroup.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ScrollBar.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_SpinBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_StaticBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_VProgressBar.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_VSlider.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustWin\inc\DummyWnd.h">
+      <Filter>CustWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustWin\inc\EditBoxWnd.h">
+      <Filter>CustWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustWin\inc\MemoryInfoWnd.h">
+      <Filter>CustWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustWin\inc\MsgBoxWnd.h">
+      <Filter>CustWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustWin\inc\WindowInfoWnd.h">
+      <Filter>CustWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_PaintBox.h">
+      <Filter>CustCtl</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

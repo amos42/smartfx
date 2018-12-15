@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 13.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 14948)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+]>
+<svg version="1.0" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="15.938" y1="31.6934" x2="15.938" y2="0.3965">
+		<stop  offset="0.0931" style="stop-color:#F7931E"/>
+		<stop  offset="0.3333" style="stop-color:#FBB03B"/>
+		<stop  offset="0.4908" style="stop-color:#FBC234"/>
+		<stop  offset="0.7941" style="stop-color:#FCEE21"/>
+		<a:midPointStop  offset="0.0931" style="stop-color:#F7931E"/>
+		<a:midPointStop  offset="0.5" style="stop-color:#F7931E"/>
+		<a:midPointStop  offset="0.3333" style="stop-color:#FBB03B"/>
+		<a:midPointStop  offset="0.5519" style="stop-color:#FBB03B"/>
+		<a:midPointStop  offset="0.7941" style="stop-color:#FCEE21"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" stroke="#000000" stroke-width="0.5" d="M31.344,15.462c0.322,0.321,0.322,0.841,0,1.164L16.519,31.452
+		c-0.321,0.321-0.841,0.321-1.163,0L0.53,16.626c-0.32-0.322-0.32-0.842,0-1.164L15.356,0.637c0.322-0.321,0.841-0.321,1.163,0
+		L31.344,15.462z"/>
+	<path opacity="0.72" fill="none" stroke="#000000" stroke-width="0.5" d="M28.532,15.327c0.26,0.259,0.26,0.68,0,0.94
+		L16.548,28.252c-0.261,0.263-0.681,0.263-0.94,0L3.622,16.267c-0.259-0.26-0.259-0.681,0-0.94L15.607,3.342
+		c0.26-0.26,0.68-0.26,0.94,0L28.532,15.327z"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="20.201,12.995 
+		15.514,12.995 17.899,9.085 	"/>
+	<polygon stroke="#000000" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" points="13.024,14.057 
+		11.093,18.057 8.74,14.41 	"/>
+	<path d="M18.584,12.403h-1.447v6.981c-2.48-4.19-6.204-4.688-6.204-4.688l-0.783,1.242c6.791,1.871,7.054,7.054,7.054,7.054v4.324
+		c0.46-0.459,0.921-0.92,1.38-1.38V12.403z"/>
+	<path opacity="0.52" fill="#FFFFFF" d="M15.351,0.362L3.434,12.259c6.104,1.959,17.432,2.772,24.516-0.554L16.514,0.362
+		C16.193,0.042,15.672,0.042,15.351,0.362z"/>
+</g>
+</svg>
