@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{587a0a58-0c09-4da9-8385-e1482afbbcb9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\OEM_UI_Impl_Win32">
+      <UniqueIdentifier>{b9966e9d-00f2-4959-a6e4-d564e0cc8057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OEM_UI_Impl_Win32\Overload">
+      <UniqueIdentifier>{ffef08a4-9026-4daa-b8d4-6af3fe2007bf}</UniqueIdentifier>
+      <Extensions>*.c,*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Source Files\OEM_UI_Impl_WinPC">
+      <UniqueIdentifier>{12649232-f1a7-41e7-9980-715299ed7cd4}</UniqueIdentifier>
+      <Extensions>*.c,*.cpp,*.h</Extensions>
+    </Filter>
+    <Filter Include="Source Files\OEM_UI_Impl_Winmb">
+      <UniqueIdentifier>{79a8f1e4-30db-40a3-b759-b2105edaf5aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{cc7ffb91-4e1b-4351-8617-1657aa9d8f4c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Common\oem_sa_gps_win32.cpp">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_mem_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_sound_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_str_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_sysutil_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_task_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\oem_sa_timer_win32.c">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Common\overload\_new_delete_ovr.cpp">
+      <Filter>Source Files\OEM_UI_Impl_Win32\Overload</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_debug_wince4.c">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_file_wince4.c">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_gps_wm5.cpp">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_key_wince4.c">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_scr_wince4.cpp">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_system_wince4.c">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinCE4\oem_sa_touch_wince4.c">
+      <Filter>Source Files\OEM_UI_Impl_Winmb</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_debug_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_file_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_key_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_scr_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_system_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\WinPC\oem_sa_touch_winpc.c">
+      <Filter>Source Files\OEM_UI_Impl_WinPC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OEM_SYSAPI_init.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\src\Common\oem_sa_str_vsnprintf.inl">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </None>
+    <None Include="..\..\src\Common\oem_sa_str_vsnscanf.inl">
+      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
+    </None>
+  </ItemGroup>
+</Project>

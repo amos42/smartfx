@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>libjpeg</ProjectName>
+    <ProjectGuid>{FB9C8725-0142-4056-A170-0C1C8ADA9E56}</ProjectGuid>
+    <RootNamespace>libjpeg</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25123.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;USES_SYSAPI;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../../inc;../../../../BaseDef/inc;../../../../SYSAPI/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;USES_SYSAPI;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>../../inc;../../../../BaseDef/inc;../../../../SYSAPI/inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\cdjpeg.c" />
+    <ClCompile Include="..\..\src\jaricom.c" />
+    <ClCompile Include="..\..\src\jcapimin.c" />
+    <ClCompile Include="..\..\src\jcapistd.c" />
+    <ClCompile Include="..\..\src\jcarith.c" />
+    <ClCompile Include="..\..\src\jccoefct.c" />
+    <ClCompile Include="..\..\src\jccolor.c" />
+    <ClCompile Include="..\..\src\jcdctmgr.c" />
+    <ClCompile Include="..\..\src\jchuff.c" />
+    <ClCompile Include="..\..\src\jcinit.c" />
+    <ClCompile Include="..\..\src\jcmainct.c" />
+    <ClCompile Include="..\..\src\jcmarker.c" />
+    <ClCompile Include="..\..\src\jcmaster.c" />
+    <ClCompile Include="..\..\src\jcomapi.c" />
+    <ClCompile Include="..\..\src\jcparam.c" />
+    <ClCompile Include="..\..\src\jcprepct.c" />
+    <ClCompile Include="..\..\src\jcsample.c" />
+    <ClCompile Include="..\..\src\jctrans.c" />
+    <ClCompile Include="..\..\src\jdapimin.c" />
+    <ClCompile Include="..\..\src\jdapistd.c" />
+    <ClCompile Include="..\..\src\jdarith.c" />
+    <ClCompile Include="..\..\src\jdatadst.c" />
+    <ClCompile Include="..\..\src\jdatasrc.c" />
+    <ClCompile Include="..\..\src\jdcoefct.c" />
+    <ClCompile Include="..\..\src\jdcolor.c" />
+    <ClCompile Include="..\..\src\jddctmgr.c" />
+    <ClCompile Include="..\..\src\jdhuff.c" />
+    <ClCompile Include="..\..\src\jdinput.c" />
+    <ClCompile Include="..\..\src\jdmainct.c" />
+    <ClCompile Include="..\..\src\jdmarker.c" />
+    <ClCompile Include="..\..\src\jdmaster.c" />
+    <ClCompile Include="..\..\src\jdmerge.c" />
+    <ClCompile Include="..\..\src\jdpostct.c" />
+    <ClCompile Include="..\..\src\jdsample.c" />
+    <ClCompile Include="..\..\src\jdtrans.c" />
+    <ClCompile Include="..\..\src\jerror.c" />
+    <ClCompile Include="..\..\src\jfdctflt.c" />
+    <ClCompile Include="..\..\src\jfdctfst.c" />
+    <ClCompile Include="..\..\src\jfdctint.c" />
+    <ClCompile Include="..\..\src\jidctflt.c" />
+    <ClCompile Include="..\..\src\jidctfst.c" />
+    <ClCompile Include="..\..\src\jidctint.c" />
+    <ClCompile Include="..\..\src\jmemansi.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jmemdos.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jmemmac.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jmemmgr.c" />
+    <ClCompile Include="..\..\src\jmemname.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jmemnobs.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\src\jmemSYSAPI.c" />
+    <ClCompile Include="..\..\src\jquant1.c" />
+    <ClCompile Include="..\..\src\jquant2.c" />
+    <ClCompile Include="..\..\src\jutils.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\jconfig.h" />
+    <ClInclude Include="..\..\inc\jerror.h" />
+    <ClInclude Include="..\..\inc\jinclude.h" />
+    <ClInclude Include="..\..\inc\jmorecfg.h" />
+    <ClInclude Include="..\..\inc\jpeglib.h" />
+    <ClInclude Include="..\..\src\cderror.h" />
+    <ClInclude Include="..\..\src\cdjpeg.h" />
+    <ClInclude Include="..\..\src\jdct.h" />
+    <ClInclude Include="..\..\src\jmemsys.h" />
+    <ClInclude Include="..\..\src\jpegint.h" />
+    <ClInclude Include="..\..\src\jversion.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

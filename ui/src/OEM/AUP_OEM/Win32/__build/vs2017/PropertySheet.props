@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BASEDEF_DIR>../../../../../BaseDef</BASEDEF_DIR>
+    <A_UIENG_DIR>../../../../../UI_Base/A_UIENG</A_UIENG_DIR>
+    <SYSAPI_DIR>../../../../../SYSAPI</SYSAPI_DIR>
+    <A_UTIL_DIR>../../../../../EXT_LIB/A_Util</A_UTIL_DIR>
+    <A_RES_DIR>../../../../../EXT_LIB/A_Res</A_RES_DIR>
+    <A_MATH_DIR>../../../../../EXT_LIB/A_Math</A_MATH_DIR>
+    <GRPX_DIR>../../../../../EXT_LIB/GrpX</GRPX_DIR>
+    <FREETYPE_DIR>../../../../../EXT_LIB/freetype-2.3.9</FREETYPE_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="BASEDEF_DIR">
+      <Value>$(BASEDEF_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_UIENG_DIR">
+      <Value>$(A_UIENG_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SYSAPI_DIR">
+      <Value>$(SYSAPI_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_UTIL_DIR">
+      <Value>$(A_UTIL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_RES_DIR">
+      <Value>$(A_RES_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="A_MATH_DIR">
+      <Value>$(A_MATH_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GRPX_DIR">
+      <Value>$(GRPX_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FREETYPE_DIR">
+      <Value>$(FREETYPE_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

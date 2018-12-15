@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AE87F11D-6E19-44A4-A393-AF2F284597B3}</ProjectGuid>
+    <RootNamespace>COMP_ExtPkg</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24720.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UIENG_DIR)/inc;../../inc;../../src/CustCtl/inc;../../src/CustWin/inc;../../../BasePkg/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)COMP_ExtPkg.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../__Output/obj/Comp_ExtPkg/Win32UnicodeRelease/COMP_ExtPkg.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UIENG_DIR)/inc;../../inc;../../src/CustCtl/inc;../../src/CustWin/inc;../../../BasePkg/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UIENG_DIR)/inc;../../inc;../../src/CustCtl/inc;../../src/CustWin/inc;../../../BasePkg/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)COMP_ExtPkg.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/COMP_ExtPkg.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UIENG_DIR)/inc;../../inc;../../src/CustCtl/inc;../../src/CustWin/inc;../../../BasePkg/inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)COMP_ExtPkg.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/COMP_ExtPkg.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\AEECOMP_ExtPkg.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_AniButton.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ButtonEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_CheckBoxEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_EditBoxEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_HSliderEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ImageButton.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ImagePanel.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ListBoxEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_MListBox.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ProgressBarEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_RadioButtonEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_RadioGroupEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ScrollBarEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ScrollPanel.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_ScrollText.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_SpinBoxEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_TickerBox.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_TransPanel.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_VProgressBarEx.c" />
+    <ClCompile Include="..\..\src\CustCtl\src\CMP_VSliderEx.c" />
+    <ClCompile Include="..\..\src\CustWin\src\EditBoxExWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\FileListWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\HSliderWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\ListBoxWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\MsgBoxExWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\PopupMenuWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\ProgressWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\RadioGroupWnd.c" />
+    <ClCompile Include="..\..\src\CustWin\src\TextViewWnd.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\AEECOMP_ExtPkg.h" />
+    <ClInclude Include="..\..\inc\ExtPkg_Ctl.h" />
+    <ClInclude Include="..\..\inc\ExtPkg_Win.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_AniButton.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ButtonEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_CheckBoxEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_EditBoxEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_HSliderEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ImageButton.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ImagePanel.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ListBoxEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_MListBox.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ProgressBarEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_RadioButtonEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_RadioGroupEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ScrollBarEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ScrollPanel.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_ScrollText.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_SpinBoxEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_TickerBox.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_TransPanel.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_VProgressBarEx.h" />
+    <ClInclude Include="..\..\src\CustCtl\inc\CMP_VSliderEx.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\EditBoxExWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\FileListWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\HSliderWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\ListBoxWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\MsgBoxExWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\PopupMenuWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\ProgressWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\RadioGroupWnd.h" />
+    <ClInclude Include="..\..\src\CustWin\inc\TextViewWnd.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

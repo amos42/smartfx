@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f3722139-4167-4909-a78c-c43da17a4dab}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{14707cb6-7297-4b2a-a22a-c5f1879836e8}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\SA_OEM_H">
+      <UniqueIdentifier>{e80a1c48-e525-42b1-b750-8fb9bba137e6}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\SA_Debug.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_File.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_GPS.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_mem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_Scr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_Sound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_str.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_SysUtil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_Task.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_Timer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_Touch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SYSAPI.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\SA_System.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\SA_Cfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_Debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_File.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_GPS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_key.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_mem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_scr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_Sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_str.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_SysUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_Task.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_Touch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SYSAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_Debug.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_File.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_Inc\OEM_SA_GPS.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_Key.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_Mem.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_Inc\OEM_SA_Scr.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_Sound.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_str.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_System.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_Inc\OEM_SA_Task.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_SA_Timer.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_Inc\OEM_SA_Touch.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_Inc\OEM_SA_SysUtil.h">
+      <Filter>Header Files\SA_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SA_System.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

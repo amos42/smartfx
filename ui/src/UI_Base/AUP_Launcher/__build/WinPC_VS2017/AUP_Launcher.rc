@@ -1,0 +1,230 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_AUP_Launcher        ICON                    "AUP_Launcher.ICO"
+
+IDI_SMALL               ICON                    "SMALL.ICO"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_AUP_Launcher MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Save &Bmp",                   IDM_BMP
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "Setting"
+    BEGIN
+        MENUITEM "240x320",                     IDM_SCREEN_240x320
+        MENUITEM "320x240",                     IDM_SCREEN_320x240
+        MENUITEM "240x400",                     IDM_SCREEN_240x400
+        MENUITEM "400x240",                     IDM_SCREEN_400x240
+        MENUITEM "320x320",                     IDM_SCREEN_320x320
+        MENUITEM "320x480",                     IDM_SCREEN_320x480
+        MENUITEM "480x272",                     IDM_SCREEN_480x272
+        MENUITEM "800x480",                     IDM_SCREEN_800x480
+        MENUITEM SEPARATOR
+        MENUITEM "x1",                          IDM_SCREEN_SCALE_X1, CHECKED
+        MENUITEM "x2",                          IDM_SCREEN_SCALE_X2
+    END
+    POPUP "Debug"
+    BEGIN
+        MENUITEM "View Debug Console",          IDM_VIEW_DEBUG
+        MENUITEM "View SystemVar Editor",       IDM_VIEW_SYSTEMVAR
+        MENUITEM "View UserKey Sender",         IDM_VIEW_USERKEY
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_AEE_TEST ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SYSVAR DIALOGEX 0, 0, 227, 95
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SystemVar"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDCLOSE,170,73,50,15
+    PUSHBUTTON      "Read",IDB_READ,7,74,50,14
+    EDITTEXT        IDE_SYSVAR_CODE_1,7,22,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDE_SYSVAR_VALUE_1,90,22,130,14,ES_AUTOHSCROLL
+    LTEXT           "SystemVar Code :",IDC_STATIC,7,7,61,8
+    LTEXT           "Value :",IDC_STATIC,81,7,23,8
+    PUSHBUTTON      "Write",IDB_WRITE,67,74,50,14
+    EDITTEXT        IDE_SYSVAR_CODE_2,7,39,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDE_SYSVAR_VALUE_2,90,39,130,14,ES_AUTOHSCROLL
+    EDITTEXT        IDE_SYSVAR_CODE_3,7,55,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDE_SYSVAR_VALUE_3,90,55,130,14,ES_AUTOHSCROLL
+END
+
+IDD_USERKEY DIALOGEX 0, 0, 201, 89
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "UserKey"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDCLOSE,144,67,50,15
+    EDITTEXT        IDE_USERKEY_1,7,29,29,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "KEY #1",IDB_BUTTON1,7,47,30,14,NOT WS_TABSTOP
+    LTEXT           "UserDef Key Base :",IDC_STATIC,7,9,63,8
+    EDITTEXT        IDE_USERKEY_BASE,78,7,116,14,ES_AUTOHSCROLL
+    EDITTEXT        IDE_USERKEY_2,47,29,29,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "KEY #2",IDB_BUTTON2,47,47,30,14,NOT WS_TABSTOP
+    EDITTEXT        IDE_USERKEY_3,87,29,29,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "KEY #3",IDB_BUTTON3,87,47,30,14,NOT WS_TABSTOP
+    EDITTEXT        IDE_USERKEY_4,126,28,29,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "KEY #4",IDB_BUTTON4,126,46,30,14,NOT WS_TABSTOP
+    EDITTEXT        IDE_USERKEY_5,165,28,29,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "KEY #5",IDB_BUTTON5,164,46,30,14,NOT WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_SYSVAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_USERKEY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_SYSVAR AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_USERKEY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "AUP_Launcher"
+    IDS_HELLO               "Hello World!"
+    IDC_AUP_Launcher        "AUP_Launcher"
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
