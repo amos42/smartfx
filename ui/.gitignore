@@ -1,2 +1,8 @@
 .vs
+*.user
+*.pdb
+*.ncb
+*.ilk
+*.aps
+*.plg
 __output/temp
