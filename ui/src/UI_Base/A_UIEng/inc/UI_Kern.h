@@ -43,6 +43,7 @@ void    atKERNEL_MouseLongClick( int btn, int x, int y );
 void    atKERNEL_Pause(void);
 void    atKERNEL_Resume(void);
 void    atKERNEL_SystemNotify( long nParam1, long nParam2 );
+void	atKERNEL_Tick( long nTick );
 
 extern atBOOL g_bIsUIEngInitialize;
 

@@ -24,9 +24,9 @@ atBOOL  	atUIAPI_InitTimer( atLONG lSysInst, atLONG lInitData1, atLONG lInitData
 atVOID  	atUIAPI_FinalTimer(void);
 atULONG		atUIAPI_GetCurrTime(void);
 
-atHTIMER    atUIAPI_AddTimer( long interval, void (*callback)(atHTIMER,void*), void *param, atBOOL bRepeat, atBOOL bEnable );
+atHTIMER	atUIAPI_AddTimer(atLONG interval, void (*callback)(atHTIMER, void*), void *param, atBOOL bRepeat, atBOOL bEnable);
 atVOID      atUIAPI_RemoveTimer( atHTIMER hTimer );
-atVOID    atUIAPI_SetTimerParam( atHTIMER hTimer, void *param );
+atVOID		atUIAPI_SetTimerParam( atHTIMER hTimer, void *param );
 atBOOL      atUIAPI_IsTimerEnabled( atHTIMER hTimer );
 atVOID      atUIAPI_EnableTimer( atHTIMER hTimer, atBOOL bEnable );
 atVOID      atUIAPI_SetTimerInterval( atHTIMER hTimer, atLONG lInterval );
@@ -34,6 +34,7 @@ atVOID      atUIAPI_ResetTimer( atHTIMER hTimer );
 
 atVOID     	atUIAPI_SuspendTimer( atHTIMER hTimer );
 atVOID      atUIAPI_ResumeTimer( atHTIMER hTimer );
+atVOID		atUIAPI_TickTimer( atLONG nMilliSec );
 
 
 #ifdef __cplusplus

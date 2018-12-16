@@ -687,3 +687,17 @@ void atKERNEL_SystemNotify( long nParam1, long nParam2 )
 	}
 }
 
+
+/**
+ @brief Timer Tick 호출.
+
+ Timer Tick을 진행한다. 
+
+ @return 없음
+*/
+void atKERNEL_Tick( long nTick )
+{
+	atUIAPI_TickTimer( nTick );
+}
+
+
