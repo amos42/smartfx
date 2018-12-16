@@ -68,6 +68,12 @@ void   ENTRYPTR_Draw(void)
 }
 
 
+void   ENTRYPTR_TickTimer(long nMilliSec)
+{
+	APP_Entry_TickTimer(nMilliSec);
+}
+
+
 void   ENTRYPTR_Resize( int width, int height )
 {
 	atUIENG_OnResize( width, height ); 

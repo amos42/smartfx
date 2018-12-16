@@ -17,6 +17,7 @@ void   ENTRYPTR_Destroy(void);
 void   ENTRYPTR_Enter(void);
 void   ENTRYPTR_Exit(void);
 void   ENTRYPTR_Draw(void);
+void   ENTRYPTR_TickTimer(long millisec);
 void   ENTRYPTR_Resize( int width, int height );
 void   ENTRYPTR_ActivateDebug( BOOL_T bDebug );
 int    ENTRYPTR_SysCommand( int code, int value );

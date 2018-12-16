@@ -28,7 +28,7 @@ void OEM_InitUIAPIfunc(void)
 	init_uiapi_sound_oem();
 	init_uiapi_str_oem();
 	init_uiapi_proc_oem();
-	init_uiapi_timer_oem();
+	//init_uiapi_timer_oem();
 	init_uiapi_key_oem();
 	init_uiapi_touch_oem();
 	init_uiapi_ime_oem();

@@ -179,6 +179,11 @@ void APP_Entry_Draw(void)
 	atUIAPI_FlushScreen();
 }
 
+void APP_Entry_TickTimer(long nMilliSec)
+{
+	atUIAPI_TickTimer(nMilliSec);
+}
+
 void APP_Entry_Debug(int param1, int param2)
 {
 	atUIENG_OnSystemNotify(param1, param2);

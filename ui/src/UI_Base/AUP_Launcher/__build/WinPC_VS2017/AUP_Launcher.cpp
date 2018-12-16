@@ -13,6 +13,7 @@
 static HWND g_hWnd = NULL;		// 현재 최상위 메인 윈도우 핸들
 static HWND g_hSysVarWnd = NULL;
 static HWND g_hUserKeyWnd = NULL;
+static UINT_PTR g_hTimer = NULL;
 
 
 #define _SCR_RESOLUTION_WIDTH	/*240*/ 320
@@ -497,6 +498,10 @@ BOOL WriteSnapFiles(int snapNo)
 */
 
 
+static VOID CALLBACK TickTimerProc (HWND hwnd, UINT message, UINT iTimerID, DWORD dwTime)
+{
+	ENTRYPTR_TickTimer(GetCurrentTime());
+}
 
 //
 //  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
@@ -522,13 +527,22 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		cur_screen_x = _SCR_RESOLUTION_WIDTH;
 		cur_screen_y = _SCR_RESOLUTION_HEIGHT;
 
-		//			if(!InitAUP( cur_screen_x, cur_screen_y, appview, appui ))
 		if (!ENTRYPTR_Create(appui, appview, cur_screen_x, cur_screen_y))
 		{
 			PostMessage(hWnd, WM_CLOSE, 0, 0);
 		}
+
+		//g_hTimer = SetTimer(hWnd, 10000, 50, (TIMERPROC)NULL);
+		g_hTimer = SetTimer(NULL, 10000, 50, TickTimerProc);
 	}
 	break;
+
+	case WM_DESTROY:
+		if (g_hTimer != NULL) KillTimer(hWnd, g_hTimer);
+		ENTRYPTR_Destroy();
+		PostQuitMessage(0);
+		//break;
+		return 0;
 
 	case WM_SHOWWINDOW:
 		ENTRYPTR_Enter();
@@ -557,12 +571,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		EndPaint(hWnd, &ps);
 		break;
 
-	case WM_DESTROY:
-		ENTRYPTR_Destroy();
-		PostQuitMessage(0);
-		//break;
-		return 1;
-
 	case WM_KEYDOWN:
 		switch (wParam)
 		{
@@ -572,6 +580,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		case VK_F2:
 			//				CaptureScreenToFile();
 			break;
+		}
+		break;
+
+	case WM_TIMER:
+		if (wParam == 10000) {
+			//ENTRYPTR_TickTimer(GetCurrentTime());
 		}
 		break;
 
@@ -629,7 +643,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }
-    return 0;
+
+	return 0;
 }
 
 static LRESULT OnSysVarDlgCommand(HWND hWnd, WPARAM wParam, LPARAM lParam)

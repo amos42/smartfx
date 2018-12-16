@@ -28,7 +28,6 @@
     <ClCompile Include="..\..\src\Common\oem_ui_res_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_sound_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_str_win32.c" />
-    <ClCompile Include="..\..\src\Common\oem_ui_timer_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_touch_win32.c" />
     <ClCompile Include="..\..\src\OEM_UI_init.c" />
     <ClCompile Include="..\..\src\WinCE4\oem_ui_font_wince4.c">

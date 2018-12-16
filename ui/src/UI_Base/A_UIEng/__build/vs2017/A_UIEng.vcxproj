@@ -273,7 +273,6 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Sound.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h" />
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Timer.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Touch.h" />
   </ItemGroup>
   <ItemGroup>

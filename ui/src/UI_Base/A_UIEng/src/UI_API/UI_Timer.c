@@ -7,7 +7,7 @@
   @see UI_Timer.h
 */
 #include "UI_API/UI_API.h"
-#include "OEM_UI_Timer.h"
+//#include "OEM_UI_Timer.h"
 #include "UI_Util.h"
 
 
@@ -30,7 +30,8 @@ typedef struct _TSoftTimer {
 
 static TSoftTimer g_timers[MAX_SOFT_TIMER];
 static int g_timer_cnt = 0;
-static OEM_TIMER g_timer_handle = atNULL;
+static long g_timer_tick = 0;
+//static OEM_TIMER g_timer_handle = atNULL;
 
 
 static int _get_empty_timer()
@@ -45,7 +46,7 @@ static int _get_empty_timer()
 	return idx;
 }
 
-static atVOID _TimerProc(OEM_TIMER hOemTimer, void *param)
+static atVOID _TimerProc(void)
 {
 	int i, cnt;
 	TSoftTimer *p;
@@ -71,12 +72,18 @@ static atVOID _TimerProc(OEM_TIMER hOemTimer, void *param)
 	}
 }
 
+/*
+static atVOID _OEMTimerProc(OEM_TIMER hOemTimer, void *param)
+{
+	_TimerProc();
+}
+
 
 static OEM_UI_TIMER_T tOemFn;
 
 atVOID	OEM_UI_Timer_SetOemFn( OEM_UI_TIMER_T *fnOem )
 {
-	tOemFn = *fnOem;
+	//tOemFn = *fnOem;
 }
 
 
@@ -84,6 +91,7 @@ atVOID	OEM_UI_Timer_GetOemFn( OEM_UI_TIMER_T *fnOem )
 {
 	*fnOem = tOemFn;
 }
+*/
 
 
 /** 
@@ -99,23 +107,26 @@ atBOOL  atUIAPI_InitTimer( atLONG lSysInst, atLONG lInitData1, atLONG lInitData2
 	int i;
 	atBOOL r;
 
-	g_timer_handle = atNULL;
-
 	g_timer_cnt = 0;
 	for (i = 0; i < MAX_SOFT_TIMER; i++) g_timers[i].activate = atFALSE;
 
+	//g_timer_handle = atNULL;
+
+	/*
 	if( tOemFn.fnInitTimer != atNULL ){
 	   r = tOemFn.fnInitTimer( lSysInst, lInitData1, lInitData2 );
 	   if (!r) return atFALSE;
 	}
-
+	*/
+	/*
 	if (tOemFn.fnAddTimer != atNULL) {
-		g_timer_handle = tOemFn.fnAddTimer(MINIMUM_TIMER_INTERVAL, _TimerProc, 0, atTRUE, atTRUE);
+		g_timer_handle = tOemFn.fnAddTimer(MINIMUM_TIMER_INTERVAL, _OEMTimerProc, 0, atTRUE, atTRUE);
 		if (g_timer_handle == atNULL) return atFALSE;
 		if (tOemFn.fnEnableTimer != atNULL) {
 			tOemFn.fnEnableTimer(g_timer_handle, atTRUE);
 		}
 	}
+	*/
 
 	return atTRUE;
 }
@@ -133,17 +144,21 @@ atVOID  atUIAPI_FinalTimer(void)
 {
 	int i;
 
+	/*
 	if (g_timer_handle != atNULL && tOemFn.fnRemoveTimer != atNULL) {
 		tOemFn.fnRemoveTimer(g_timer_handle);
 		g_timer_handle = atNULL;
 	}
+	*/
 
 	g_timer_cnt = 0;
 	for (i = 0; i < MAX_SOFT_TIMER; i++) g_timers[i].activate = atFALSE;
 
+	/*
 	if( tOemFn.fnFinalTimer != atNULL ){
 		tOemFn.fnFinalTimer();
 	}
+	*/
 }
 
 
@@ -157,11 +172,13 @@ atVOID  atUIAPI_FinalTimer(void)
 */
 atULONG	 atUIAPI_GetCurrTime(void)
 {
+	/*
 	if( tOemFn.fnGetCurrTime != atNULL ){
 		return tOemFn.fnGetCurrTime();
 	}
+	*/
 
-	return 0;
+	return g_timer_tick;
 }
 
 
@@ -429,6 +446,7 @@ atVOID  atUIAPI_ResumeTimer( atHTIMER hTimer )
 */
 atVOID  atUIAPI_TickTimer( atLONG nMilliSec )
 {
-
+	g_timer_tick = nMilliSec;
+	_TimerProc();
 }
 

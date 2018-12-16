@@ -276,9 +276,6 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Timer.h">
-      <Filter>Header Files\UI_OEM_H</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Touch.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>

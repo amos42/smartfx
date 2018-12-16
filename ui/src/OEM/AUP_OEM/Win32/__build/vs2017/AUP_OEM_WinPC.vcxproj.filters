@@ -73,9 +73,6 @@
     <ClCompile Include="..\..\src\Common\oem_ui_str_win32.c">
       <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Common\oem_ui_timer_win32.c">
-      <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Common\oem_ui_touch_win32.c">
       <Filter>Source Files\OEM_UI_Impl_Win32</Filter>
     </ClCompile>

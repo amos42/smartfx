@@ -17,7 +17,7 @@ atBOOL  	SYSAPI_InitTimer( atLONG lSysInst, atLONG lInitData1, atLONG lInitData2
 atVOID  	SYSAPI_FinalTimer( NOARGS );
 atULONG		SYSAPI_GetCurrTime( NOARGS );
 
-SYS_TIMER    SYSAPI_AddTimer( long interval, void (*callback)(SYS_TIMER,void*), void *param, atBOOL bRepeat, atBOOL bEnable );
+SYS_TIMER    SYSAPI_AddTimer(atLONG interval, void (*callback)(SYS_TIMER,void*), void *param, atBOOL bRepeat, atBOOL bEnable );
 atVOID      SYSAPI_RemoveTimer( SYS_TIMER hTimer );
 atVOID    SYSAPI_SetTimerParam( SYS_TIMER hTimer, void *param );
 atBOOL      SYSAPI_IsTimerEnabled( SYS_TIMER hTimer );
