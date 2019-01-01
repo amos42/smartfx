@@ -213,8 +213,6 @@
     <ClCompile Include="..\..\src\UI_API\UI_mem.c" />
     <ClCompile Include="..\..\src\UI_API\UI_OIC.c" />
     <ClCompile Include="..\..\src\UI_API\UI_Proc.c" />
-    <ClCompile Include="..\..\src\UI_API\UI_Res.c" />
-    <ClCompile Include="..\..\src\UI_API\UI_Sound.c" />
     <ClCompile Include="..\..\src\UI_API\UI_str.c" />
     <ClCompile Include="..\..\src\UI_API\UI_Timer.c" />
     <ClCompile Include="..\..\src\UI_API\UI_Touch.c" />
@@ -243,7 +241,6 @@
     <ClInclude Include="..\..\inc\UI_API\UI_OIC.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Proc.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Res.h" />
-    <ClInclude Include="..\..\inc\UI_API\UI_Sound.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_str.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Timer.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Touch.h" />
@@ -265,12 +262,10 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_GDI.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_IME.h" />
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Key.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_OIC.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Proc.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Res.h" />
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Sound.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Touch.h" />

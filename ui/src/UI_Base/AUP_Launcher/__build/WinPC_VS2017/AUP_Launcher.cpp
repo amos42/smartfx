@@ -6,6 +6,7 @@
 
 #include "../../inc/EntryPtr.h"
 #include "SYSAPI.h"
+#include "A_UIEng.h"
 
 #define MAX_LOADSTRING 100
 
@@ -14,6 +15,10 @@ static HWND g_hWnd = NULL;		// 현재 최상위 메인 윈도우 핸들
 static HWND g_hSysVarWnd = NULL;
 static HWND g_hUserKeyWnd = NULL;
 static UINT_PTR g_hTimer = NULL;
+static HANDLE g_hMsgThread;
+static DWORD g_MsgThreadId;
+static HANDLE g_hDispThread;
+static DWORD g_DispThreadId;
 
 
 #define _SCR_RESOLUTION_WIDTH	/*240*/ 320
@@ -42,6 +47,55 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 //int GetLastSnapNo();
 //BOOL WriteSnapFiles(int snapNo);
+
+static int ConvOEMKey2VKey(int OEMKey)
+{
+	int vk = SYS_VKEY_NULL;
+
+	switch (OEMKey) {
+	case VK_HOME:
+	case VK_RETURN: vk = atVKEY_SELECT;        break;
+	case VK_END:
+	case VK_BACK: vk = atVKEY_CLEAR;		break;
+	case VK_UP: vk = atVKEY_UP;        	break;
+	case VK_DOWN: vk = atVKEY_DOWN;        	break;
+	case VK_LEFT: vk = atVKEY_LEFT;        	break;
+	case VK_RIGHT: vk = atVKEY_RIGHT;        	break;
+	case VK_DELETE: vk = atVKEY_SEND;        	break;
+	case VK_NEXT: vk = atVKEY_END;        	break;
+	case VK_INSERT: vk = atVKEY_SOFT1;        	break;
+	case VK_ESCAPE:
+	case VK_PRIOR: vk = atVKEY_SOFT2;        	break;
+		//		case '0' :
+	case VK_NUMPAD0: vk = atVKEY_0;        		break;
+		//		case '1' :
+	case VK_NUMPAD1: vk = atVKEY_1;        		break;
+		//		case '2' :
+	case VK_NUMPAD2: vk = atVKEY_2;        		break;
+		//		case '3' :
+	case VK_NUMPAD3: vk = atVKEY_3;        		break;
+		//		case '4' :
+	case VK_NUMPAD4: vk = atVKEY_4;        		break;
+		//		case '5' :
+	case VK_NUMPAD5: vk = atVKEY_5;        		break;
+		//		case '6' :
+	case VK_NUMPAD6: vk = atVKEY_6;        		break;
+		//		case '7' :
+	case VK_NUMPAD7: vk = atVKEY_7;        		break;
+		//		case '8' :
+	case VK_NUMPAD8: vk = atVKEY_8;        		break;
+		//		case '9' :
+	case VK_NUMPAD9: vk = atVKEY_9;        		break;
+	case VK_F5:
+	case VK_ADD: vk = atVKEY_STAR;		break;
+	case VK_F6:
+	case VK_SUBTRACT: vk = atVKEY_POUND;	   	break;
+
+	case VK_F11: vk = atVKEY_DEBUG1;	   	break;
+	}
+
+	return vk;
+}
 
 /*
 static void CaptureScreenToClipboard(void)
@@ -195,6 +249,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
+
+		//ENTRYPTR_TickTimer(GetCurrentTime());
+		//ENTRYPTR_TickMsgProcess();
+		//ENTRYPTR_TickDispProcess();
     }
 
     return (int) msg.wParam;
@@ -498,9 +556,60 @@ BOOL WriteSnapFiles(int snapNo)
 */
 
 
-static VOID CALLBACK TickTimerProc (HWND hwnd, UINT message, UINT iTimerID, DWORD dwTime)
+//static VOID CALLBACK TickTimerProc (HWND hwnd, UINT message, UINT iTimerID, DWORD dwTime)
+//{
+//	ENTRYPTR_TickTimer(GetCurrentTime());
+//}
+
+static DWORD WINAPI MsgThread(LPVOID vv)
 {
-	ENTRYPTR_TickTimer(GetCurrentTime());
+	DWORD exitCode;
+
+	while (1) {
+		ENTRYPTR_TickMsgProcess();
+	}
+
+	//	tt->cur_signal |= SYS_EVENT_TERMINATE;
+	//	SetEvent( tt->event );
+
+	// _beginthreadex로 생성한 코드 안전 종료
+	GetExitCodeThread(g_hMsgThread, &exitCode);
+	//_endthreadex(exitCode);	
+	ExitThread(exitCode);
+
+	return 0;
+}
+
+CRITICAL_SECTION cr;
+
+static void _displistener(int event)
+{
+	if (event == EVENT_DISP_SCREEN_LOCKED) {
+		EnterCriticalSection(&cr);
+	}
+	else if (event == EVENT_DISP_SCREEN_UNLOCKED)
+	{
+		LeaveCriticalSection(&cr);
+	}
+}
+
+static DWORD WINAPI DispThread(LPVOID vv)
+{
+	DWORD exitCode;
+
+	while (1) {
+		ENTRYPTR_TickDispProcess();
+	}
+
+	//	tt->cur_signal |= SYS_EVENT_TERMINATE;
+	//	SetEvent( tt->event );
+
+	// _beginthreadex로 생성한 코드 안전 종료
+	GetExitCodeThread(g_hDispThread, &exitCode);
+	//_endthreadex(exitCode);	
+	ExitThread(exitCode);
+
+	return 0;
 }
 
 //
@@ -532,13 +641,24 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			PostMessage(hWnd, WM_CLOSE, 0, 0);
 		}
 
-		//g_hTimer = SetTimer(hWnd, 10000, 50, (TIMERPROC)NULL);
-		g_hTimer = SetTimer(NULL, 10000, 50, TickTimerProc);
+		g_hTimer = SetTimer(hWnd, 10000, 50, (TIMERPROC)NULL);
+		//g_hTimer = SetTimer(NULL, 10000, 50, TickTimerProc);
+
+		InitializeCriticalSection(&cr);
+		g_hDispThread = CreateThread(NULL, 1024, DispThread, (void *)NULL, 0, &g_DispThreadId);
+
+		g_hMsgThread = CreateThread(NULL, 1024, MsgThread, (void *)NULL, 0, &g_MsgThreadId);
 	}
 	break;
 
 	case WM_DESTROY:
 		if (g_hTimer != NULL) KillTimer(hWnd, g_hTimer);
+
+		CloseHandle(g_hMsgThread);
+
+		CloseHandle(g_hDispThread);
+		DeleteCriticalSection(&cr);
+
 		ENTRYPTR_Destroy();
 		PostQuitMessage(0);
 		//break;
@@ -571,6 +691,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		EndPaint(hWnd, &ps);
 		break;
 
+	case WM_TIMER:
+		if (wParam == 10000) {
+			ENTRYPTR_TickTimer(GetCurrentTime());
+		}
+		break;
+
+	//		case WM_SYSKEYDOWN:
 	case WM_KEYDOWN:
 		switch (wParam)
 		{
@@ -581,11 +708,37 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			//				CaptureScreenToFile();
 			break;
 		}
+
+		if (!(lParam & (1 << 30))) { // 키 누르는 처음 한번만 호출
+			int vkey = ConvOEMKey2VKey(wParam);
+			if (vkey == 0) return 1;
+			atKERNEL_KeyDown(vkey);
+			//if (g_fnInputFunc) g_fnInputFunc(SYS_MSG_KEYDOWN, vkey, 0);
+		}
 		break;
 
-	case WM_TIMER:
-		if (wParam == 10000) {
-			//ENTRYPTR_TickTimer(GetCurrentTime());
+	//		case WM_SYSKEYUP:
+	case WM_KEYUP: {
+			int vkey = ConvOEMKey2VKey(wParam);
+			if (vkey == 0) return 1;
+			atKERNEL_KeyUp(vkey);
+			//if (g_fnInputFunc) g_fnInputFunc(SYS_MSG_KEYUP, vkey, 0);
+		}
+		break;
+
+	case WM_CHAR: {
+			int scan_code = (lParam >> 16) & 0xFF;
+			if (scan_code == 28) break;					// Enter 키는 제외한다.
+			if (scan_code == 14) break;					// Back Space 키는 제외한다.
+			if (scan_code >= 71 && scan_code <= 82) break;	// 숫자 키패드는 제외한다.
+			//atKERNEL_KeyPress(SYS_MSG_CHAR, wParam, 0);
+		}
+		break;
+
+	case WM_MOUSEWHEEL:	{
+			int delta = HIWORD(wParam);
+			delta = (delta / WHEEL_DELTA); // WHEEL_DELTA : 120
+			//if (g_fnInputFunc) g_fnInputFunc(SYS_MSG_SCROLL, delta, 0);
 		}
 		break;
 

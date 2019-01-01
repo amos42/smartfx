@@ -101,3 +101,13 @@ int   ENTRYPTR_GetSystemVar( int code )
 	  atUIENG_OnSystemNotify( code, 0 );
 	  return 0;
 }
+
+void ENTRYPTR_TickMsgProcess()
+{
+	atKERNEL_TickMessage();
+}
+
+void ENTRYPTR_TickDispProcess()
+{
+	atKERNEL_TickDisplay();
+}

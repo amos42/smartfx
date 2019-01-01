@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F84B029C-C6D6-44C7-9FD6-66CF3BDA2A4C}</ProjectGuid>
+    <RootNamespace>A_UIEng</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>A_UIEng</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="PropertySheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.24720.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>$(SolutionDir)/__Output/lib/$(Platform)/$(Configuration)/</OutDir>
+    <IntDir>$(SolutionDir)/__Output/temp/$(Platform)/$(ProjectName)/$(Configuration)/</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UTIL_DIR)/inc;../../inc;../../OEM_inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)A_UIEng.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../__output/obj/A_UIEng/Win32UnicodeRelease/A_UIEng.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UTIL_DIR)/inc;../../inc;../../OEM_inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)A_UIEng.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release/A_UIEng.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UTIL_DIR)/inc;../../inc;../../OEM_inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)A_UIEng.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Debug/A_UIEng.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(BASEDEF_DIR)/inc;$(A_UTIL_DIR)/inc;../../inc;../../OEM_inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Core\AnnBar.c" />
+    <ClCompile Include="..\..\src\Core\App.c" />
+    <ClCompile Include="..\..\src\Core\AppMng.c" />
+    <ClCompile Include="..\..\src\Core\Control.c" />
+    <ClCompile Include="..\..\src\Core\CtlMng.c" />
+    <ClCompile Include="..\..\src\Core\Msg.c" />
+    <ClCompile Include="..\..\src\Core\SoftKey.c" />
+    <ClCompile Include="..\..\src\Core\UI_Desk.c" />
+    <ClCompile Include="..\..\src\Core\UI_Disp.c" />
+    <ClCompile Include="..\..\src\Core\UI_Event.c" />
+    <ClCompile Include="..\..\src\Core\UI_Kern.c" />
+    <ClCompile Include="..\..\src\Core\Window.c" />
+    <ClCompile Include="..\..\src\Core\WinMng.c" />
+    <ClCompile Include="..\..\src\Core\WinObj.c" />
+    <ClCompile Include="..\..\src\Core\WObjMng.c" />
+    <ClCompile Include="..\..\src\EntryPtr\UI_Entry.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_APIs.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Debug.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_File.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Font.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_gdi.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_IME.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_key.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_List.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_mem.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_OIC.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Proc.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Res.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Sound.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_str.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Timer.c" />
+    <ClCompile Include="..\..\src\UI_API\UI_Touch.c" />
+    <ClCompile Include="..\..\src\Util\UI_Util.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\AnnBar.h" />
+    <ClInclude Include="..\..\inc\App.h" />
+    <ClInclude Include="..\..\inc\AppMng.h" />
+    <ClInclude Include="..\..\inc\A_UIENG.h" />
+    <ClInclude Include="..\..\inc\A_UI_MSG.h" />
+    <ClInclude Include="..\..\inc\Control.h" />
+    <ClInclude Include="..\..\inc\CtlMng.h" />
+    <ClInclude Include="..\..\inc\Msg.h" />
+    <ClInclude Include="..\..\inc\SoftKey.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_API.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Cfg.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Debug.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_File.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Font.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_gdi.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_IME.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_key.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_List.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_mem.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_OIC.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Proc.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Res.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Sound.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_str.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Timer.h" />
+    <ClInclude Include="..\..\inc\UI_API\UI_Touch.h" />
+    <ClInclude Include="..\..\inc\UI_Desk.h" />
+    <ClInclude Include="..\..\inc\UI_Disp.h" />
+    <ClInclude Include="..\..\inc\UI_Entry.h" />
+    <ClInclude Include="..\..\inc\UI_Event.h" />
+    <ClInclude Include="..\..\inc\UI_Kern.h" />
+    <ClInclude Include="..\..\inc\UI_MNG.h" />
+    <ClInclude Include="..\..\inc\UI_OpDef.h" />
+    <ClInclude Include="..\..\inc\UI_Types.h" />
+    <ClInclude Include="..\..\inc\UI_Util.h" />
+    <ClInclude Include="..\..\inc\Window.h" />
+    <ClInclude Include="..\..\inc\WinMng.h" />
+    <ClInclude Include="..\..\inc\WinObj.h" />
+    <ClInclude Include="..\..\inc\WObjMng.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Debug.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_File.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_GDI.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_IME.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Key.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_OIC.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Proc.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Res.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Sound.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Timer.h" />
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Touch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\inc\Control.inl" />
+    <None Include="..\..\inc\CtlMng.inl" />
+    <None Include="..\..\inc\Window.inl" />
+    <None Include="..\..\inc\WinMng.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

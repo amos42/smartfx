@@ -106,7 +106,7 @@ atHEVENTPROC  atUIAPI_CreateEventProcessor( atLPTSTR szProcName, atINT nProcType
 	funcs.fnFreeMem = (atLPCALLBACKFREE)atUIAPI_FreeMem;
     lpEvProc->g_queue = atQUEUE_Create( &funcs, queue_size, item_size );
 
-    lpEvProc->hProcess = atUIAPI_CreateProcessor( szProcName, nProcType, cUIProc, (atHEVENTPROC)lpEvProc );
+	lpEvProc->hProcess = atNULL; // atUIAPI_CreateProcessor(szProcName, nProcType, cUIProc, (atHEVENTPROC)lpEvProc);
 
     lpEvProc->process_flag = atFALSE;
 	lpEvProc->tag = 0;

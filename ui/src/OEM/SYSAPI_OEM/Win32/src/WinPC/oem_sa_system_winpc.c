@@ -72,10 +72,10 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 			}
  	}
 
-	if( r != 0 )
+	//if( r != 0 )
 		return CallWindowProc( g_WndProc_Original, hWnd, message, wParam, lParam );
-	else
-		return r;
+	//else
+		//return r;
 }
 
 

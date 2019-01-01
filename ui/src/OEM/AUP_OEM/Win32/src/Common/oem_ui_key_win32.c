@@ -81,7 +81,7 @@ static atBOOL OEM_UI_InitInputDev(  atLONG lSysInst, atLONG lInitData1, atLONG l
 // Memory, String, File, Debug, Task, Timer, Input, Sound, GPS는 시스템에서 초기화를 관리한다.
 //	SYSAPI_InitInputDev( lSysInst, lInitData1, lInitData2 );
 
-	SYSAPI_SetKeypadNotifyFunc( func );
+	//SYSAPI_SetKeypadNotifyFunc( func );
 
 	return atTRUE;
 }

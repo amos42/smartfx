@@ -22,7 +22,8 @@ void   ENTRYPTR_Resize( int width, int height );
 void   ENTRYPTR_ActivateDebug( BOOL_T bDebug );
 int    ENTRYPTR_SysCommand( int code, int value );
 int    ENTRYPTR_GetSystemVar( int code );
-
+void   ENTRYPTR_TickMsgProcess(void);
+void   ENTRYPTR_TickDispProcess(void);
 
 #ifdef __cplusplus
 }

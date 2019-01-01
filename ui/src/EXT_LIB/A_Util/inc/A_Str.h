@@ -26,6 +26,11 @@ atINT	atSTR_vsnscanf( atLPSTR str, atINT nLen, atLPCSTR fmt, va_list ap );
 atINT	atSTR_vsnwprintf( atLPWSTR str, atINT nLen, atLPCWSTR fmt, va_list ap );
 atINT	atSTR_vsnwscanf( atLPWSTR str, atINT nLen, atLPCWSTR fmt, va_list ap );
 
+atCHAR * atSTR_strins(atLPSTR dstr, atLPCSTR sstr, atINT nIndex, atINT nInsLen);
+atWCHAR * atSTR_wcsins(atLPWSTR dstr, atLPCWSTR sstr, atINT nIndex, atINT nInsLen);
+atCHAR * atSTR_strdel(atLPSTR dstr, atINT nIndex, atINT nDelLen);
+atWCHAR * atSTR_wcsdel(atLPWSTR dstr, atINT nIndex, atINT nDelLen);
+
 
 #ifdef __cplusplus
 }

@@ -700,4 +700,16 @@ void atKERNEL_Tick( long nTick )
 	atUIAPI_TickTimer( nTick );
 }
 
+void atKERNEL_TickMessage(void)
+{
+	atAPP_TickMsgProcess(atAPPMNG_GetCurApp());
+}
+
+void atKERNEL_TickDisplay(void)
+{
+	atUIAPI_TickDispProcess();
+}
+
+
+
 

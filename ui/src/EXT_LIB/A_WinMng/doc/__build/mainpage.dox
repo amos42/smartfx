@@ -1,0 +1,16 @@
+/**
+  @mainpage   BUP API Reference
+  @section intro 소개
+  - 소개      :   Beagle UI Platform
+  @section   Program 프로그램명
+  - 프로그램명  :   BUP API Reference
+  - 프로그램내용    :   BUP의 API Reference 문서
+  @section  INOUTPUT   입출력 자료
+  - INPUT           :   없음.
+  - OUTPUT      :   
+  @section  CREATEINFO      작성 정보
+  - 작성자      :   Amos
+  - 작성일      :   2010/04/20
+  @section  MODIFYINFO      수정정보
+  - 수정자/수정일   : Amos / 2010/04/23
+  */

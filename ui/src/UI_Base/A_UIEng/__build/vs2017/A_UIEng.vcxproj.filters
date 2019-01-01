@@ -103,12 +103,6 @@
     <ClCompile Include="..\..\src\UI_API\UI_Proc.c">
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\UI_API\UI_Res.c">
-      <Filter>Source Files\UI_API</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\UI_API\UI_Sound.c">
-      <Filter>Source Files\UI_API</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\UI_API\UI_str.c">
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
@@ -225,9 +219,6 @@
     <ClInclude Include="..\..\inc\UI_API\UI_Res.h">
       <Filter>Header Files\UI_API_H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\UI_API\UI_Sound.h">
-      <Filter>Header Files\UI_API_H</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\UI_API\UI_str.h">
       <Filter>Header Files\UI_API_H</Filter>
     </ClInclude>
@@ -252,9 +243,6 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_IME.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Key.h">
-      <Filter>Header Files\UI_OEM_H</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
@@ -265,9 +253,6 @@
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Res.h">
-      <Filter>Header Files\UI_OEM_H</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_Sound.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h">

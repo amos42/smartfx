@@ -22,11 +22,8 @@
     <ClCompile Include="..\..\src\Common\oem_ui_debug_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_file_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_gdi_win32.c" />
-    <ClCompile Include="..\..\src\Common\oem_ui_key_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_mem_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_proc_win32.c" />
-    <ClCompile Include="..\..\src\Common\oem_ui_res_win32.c" />
-    <ClCompile Include="..\..\src\Common\oem_ui_sound_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_str_win32.c" />
     <ClCompile Include="..\..\src\Common\oem_ui_touch_win32.c" />
     <ClCompile Include="..\..\src\OEM_UI_init.c" />

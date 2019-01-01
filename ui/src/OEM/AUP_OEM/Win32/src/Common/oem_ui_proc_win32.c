@@ -268,6 +268,7 @@ static OEM_UI_PROCESSOR    OEM_UI_CreateProcessor( atLPTSTR szProcName, atINT nP
 static atVOID          OEM_UI_DestroyProcessor( OEM_UI_PROCESSOR OEM_Processor )
 {
 	TProcess *p = (TProcess *)OEM_Processor; 
+	if (p == atNULL) return;
 	p->state = -1;
 
 	SYSAPI_SendSignal( p->events, SYS_EVENT_TERMINATE );
@@ -284,24 +285,28 @@ static atVOID          OEM_UI_DestroyProcessor( OEM_UI_PROCESSOR OEM_Processor )
 static atVOID          OEM_UI_SuspendProcessor( OEM_UI_PROCESSOR OEM_Processor )
 {
 	TProcess *p = (TProcess *)OEM_Processor; 
+	if (p == atNULL) return;
 	SYSAPI_SuspendTask( p->thread );
 }
 
 static atVOID          OEM_UI_ResumeProcessor( OEM_UI_PROCESSOR OEM_Processor )
 {
 	TProcess *p = (TProcess *)OEM_Processor; 
+	if (p == atNULL) return;
 	SYSAPI_ResumeTask( p->thread );
 }
 
 static atVOID          OEM_UI_WakeProcessor( OEM_UI_PROCESSOR OEM_Processor )
 {
 	TProcess *p = (TProcess *)OEM_Processor;
+	if (p == atNULL) return;
 	SYSAPI_SendSignal( p->events, SYS_EVENT_WAKEUP );
 }
 
 static atBOOL          OEM_UI_IsActiveProcessor( OEM_UI_PROCESSOR OEM_Processor )
 {
 	TProcess *p = (TProcess *)OEM_Processor; 
+	if (p == atNULL) return atFALSE;
 //	return SYSAPI_GetTaskState(p->thread) == SYS_TASKSTATE_RUNNING;
 	return p->state == 1;
 }

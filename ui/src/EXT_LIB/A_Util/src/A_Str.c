@@ -94,7 +94,7 @@ atLPSTR atSTR_strncpy( atLPSTR des, atLPCSTR src, atLONG len )
 /****************************
   문자열을 비교한다.
 *****************************/
-atINT atSTR__strcmp( atLPCSTR str1, atLPCSTR str2 )
+atINT atSTR_strcmp( atLPCSTR str1, atLPCSTR str2 )
 {
 	atUCHAR *ptr1, *ptr2, ch1, ch2;
 	
@@ -177,4 +177,282 @@ atINT atSTR_vsnwscanf( atLPWSTR str, atINT nLen, atLPCWSTR fmt, va_list ap )
 }
 
 #undef __USES_FORCE_UNICODE_
+
+
+atCHAR * atSTR_strins(atLPSTR dstr, atLPCSTR sstr, atINT nIndex, atINT nInsLen)
+{
+	int i;
+	int srclen = nInsLen;
+	int deslen = SYSAPI_strlen(dstr);
+	if (srclen < 0) srclen = SYSAPI_strlen(sstr);
+
+	if (srclen <= 0) return dstr;
+	if (deslen <= 0) {
+		return SYSAPI_strncpy(dstr, sstr, srclen);
+	}
+	if (nIndex >= deslen) nIndex = deslen;
+
+	for (i = deslen - nIndex - 1; i >= 0; i--) {
+		dstr[nIndex + srclen + i] = dstr[nIndex + i];
+	}
+	for (i = 0; i < srclen; i++) {
+		dstr[nIndex + i] = sstr[i];
+	}
+	dstr[deslen + srclen] = '\0';
+
+	return dstr;
+}
+
+atWCHAR * atSTR_wcsins(atLPWSTR dstr, atLPCWSTR sstr, atINT nIndex, atINT nInsLen)
+{
+	int i;
+	int srclen = nInsLen;
+	int deslen = SYSAPI_wcslen(dstr);
+	if (srclen < 0) srclen = SYSAPI_wcslen(sstr);
+
+	if (srclen <= 0) return dstr;
+	if (deslen <= 0) {
+		return SYSAPI_wcsncpy(dstr, sstr, srclen);
+	}
+	if (nIndex >= deslen) nIndex = deslen;
+
+	for (i = deslen - nIndex - 1; i >= 0; i--) {
+		dstr[nIndex + srclen + i] = dstr[nIndex + i];
+	}
+	for (i = 0; i < srclen; i++) {
+		dstr[nIndex + i] = sstr[i];
+	}
+	dstr[deslen + srclen] = L'\0';
+
+	return dstr;
+}
+
+
+atCHAR * atSTR_strdel(atLPSTR dstr, atINT nIndex, atINT nDelLen)
+{
+	int i, cnt;
+	int len = SYSAPI_strlen(dstr);
+
+	if ((len <= 0) || (nIndex >= len) || (nDelLen <= 0)) {
+		return dstr;
+	}
+
+	cnt = len - nIndex - nDelLen;
+	for (i = 0; i < cnt; i++) {
+		dstr[nIndex + i] = dstr[nIndex + nDelLen + i];
+	}
+	dstr[len - nDelLen] = '\0';
+
+	return dstr;
+}
+
+atWCHAR * atSTR_wcsdel(atLPWSTR dstr, atINT nIndex, atINT nDelLen)
+{
+	int i, cnt;
+	int len = SYSAPI_wcslen(dstr);
+
+	if ((len <= 0) || (nIndex >= len) || (nDelLen <= 0)) {
+		return dstr;
+	}
+
+	cnt = len - nIndex - nDelLen;
+	for (i = 0; i < cnt; i++) {
+		dstr[nIndex + i] = dstr[nIndex + nDelLen + i];
+	}
+	dstr[len - nDelLen] = L'\0';
+
+	return dstr;
+}
+
+
+
+#if 0
+
+atINT atSTR_UCS2ANSI(_OUT_ atLPSTR szOut, _IN_ atLPCWSTR szIn, atINT nLen)
+{
+	if (nLen < 0) nLen = atSTR_wcslen((const atLPWSTR)szIn);
+	if (nLen <= 0) return 0;
+
+	int cnt;
+	if (nLen <= 0) return 0;
+	cnt = WideCharToMultiByte(CP_OEMCP, 0, szIn, -1, szOut, 0, NULL, NULL);
+	cnt = WideCharToMultiByte(CP_OEMCP, 0, szIn, -1, szOut, cnt, NULL, NULL);
+	szOut[cnt] = '\0';
+	return cnt;
+}
+
+atINT atSTR_ANSI2UCS(_OUT_ atLPWSTR szOut, _IN_ atLPCSTR szIn, atINT nLen)
+{
+	if (nLen < 0) nLen = atSTR_strlen((const atLPSTR)szIn);
+	if (nLen <= 0) return 0;
+
+	int cnt;
+	if (nLen <= 0) return 0;
+	cnt = MultiByteToWideChar(CP_OEMCP, MB_PRECOMPOSED, szIn, nLen, szOut, nLen);
+	szOut[cnt] = L'\0';
+	return cnt;
+}
+
+atINT  atSTR_UCS2_to_UCS4(atUCS4_CHAR *szOut, const atUCS2_CHAR *szIn, atINT nLen)
+{
+	int cnt = 0;
+	atUCS2_CHAR *lpIn = (atUCS2_CHAR *)szIn;
+	atUCS4_CHAR *lpOut = szOut;
+
+	if (nLen <= 0) return 0;
+
+	while ((*lpIn) != 0x00 && (*lpIn) != (atUCS2_CHAR)'\0' && nLen)
+	{
+		*lpOut = (atUCS4_CHAR)(*lpIn);
+
+		lpIn++;	nLen--;
+		lpOut++;	cnt++;
+	}
+
+	*lpOut = (atUCS4_CHAR)'\0';
+
+	return cnt;
+}
+
+atINT  atSTR_UCS4_to_UCS2(atUCS2_CHAR *szOut, const atUCS4_CHAR *szIn, atINT nLen)
+{
+	int cnt = 0;
+	atUCS4_CHAR *lpIn = (atUCS4_CHAR *)szIn;
+	atUCS2_CHAR *lpOut = szOut;
+
+	if (nLen <= 0) return 0;
+
+	while ((*lpIn) != 0x00 && (*lpIn) != (atUCS4_CHAR)'\0' && nLen)
+	{
+		*lpOut = (atUCS2_CHAR)(*lpIn);
+
+		lpIn++;	nLen--;
+		lpOut++;	cnt++;
+	}
+
+	*lpOut = (atUCS2_CHAR)'\0';
+
+	return cnt;
+}
+
+
+atINT atSTR_ToANSI(_OUT_ atLPSTR szOut, _IN_ atLPCTSTR szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	return atSTR_UCS2ANSI(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#else
+	if (nLen > 0) {
+		atSTR_strncpy(szOut, szIn, nLen);
+	}
+	else if (nLen < 0) {
+		atSTR_strcpy(szOut, szIn);
+	}
+	return atSTR_strlen(szOut);
+#endif
+}
+
+atINT atSTR_ToUCS(_OUT_ atLPWSTR szOut, _IN_ atLPCTSTR szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	if (nLen > 0) {
+		atSTR_wcsncpy(szOut, szIn, nLen);
+	}
+	else if (nLen < 0) {
+		atSTR_wcscpy(szOut, szIn);
+	}
+	return atSTR_wcslen(szOut);
+#else
+	return SYSAPI_ANSI2UCS(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#endif
+}
+
+atINT atSTR_ToUCS2(_OUT_ atUCS2_CHAR *szOut, _IN_ atLPCTSTR szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	if (sizeof(atWCHAR) == sizeof(atUCS2_CHAR)) {
+		if (nLen > 0) {
+			atSTR_wcsncpy(szOut, szIn, nLen);
+		}
+		else if (nLen < 0) {
+			atSTR_wcscpy(szOut, szIn);
+		}
+	}
+	else if (sizeof(atWCHAR) == 4) {
+		atSTR_UCS4_to_UCS2(szOut, (const atUCS4_CHAR *)szIn, nLen);
+	}
+	else {
+		return 0;
+	}
+	return atSTR_wcslen(szOut);
+#else
+	return atSTR_ANSI2UCS(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#endif
+}
+
+atINT atSTR_FromANSI(_OUT_ atLPTSTR szOut, _IN_ atLPCSTR szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	return atSTR_ANSI2UCS(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#else
+	if (nLen > 0) {
+		atSTR_strncpy(szOut, szIn, nLen);
+	}
+	else if (nLen < 0) {
+		atSTR_strcpy(szOut, szIn);
+	}
+	return atSTR_strlen(szOut);
+#endif
+}
+
+atINT atSTR_FromUCS(_OUT_ atLPTSTR szOut, _IN_ atLPCWSTR szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	if (nLen > 0) {
+		atSTR_wcsncpy((const atLPWSTR)szOut, (const atLPWSTR)szIn, nLen);
+	}
+	else {
+		atSTR_wcscpy((const atLPWSTR)szOut, (const atLPWSTR)szIn);
+	}
+	return atSTR_wcslen(szOut);
+#else
+	return SYSAPI_UCS2ANSI(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#endif
+}
+
+atINT atSTR_FromUCS2(_OUT_ atLPTSTR szOut, _IN_ const atUCS2_CHAR *szIn, atINT nLen)
+{
+	if (nLen == 0) return 0;
+
+#ifdef __USES_UNICODE_
+	if (sizeof(atWCHAR) == sizeof(atUCS2_CHAR)) {
+		if (nLen > 0) {
+			atSTR_wcsncpy((const atLPWSTR)szOut, (const atLPWSTR)szIn, nLen);
+		}
+		else {
+			atSTR_wcscpy((const atLPWSTR)szOut, (const atLPWSTR)szIn);
+		}
+	}
+	else if (sizeof(atWCHAR) == 4) {
+		atSTR_UCS2_to_UCS4((atUCS4_CHAR *)szOut, szIn, nLen);
+	}
+	else {
+		return 0;
+	}
+	return atSTR_wcslen(szOut);
+#else
+	return atSTR_UCS2ANSI(szOut, szIn, nLen); // nLen < 0 일 경우, 전체
+#endif
+}
+
+#endif
 

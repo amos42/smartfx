@@ -56,9 +56,6 @@ atBOOL atUIAPI_Initialize( atUIAPI_INIT_DATA *lpInitData )
 #ifdef __USES_UI_FONT_
 	atUIAPI_InitFont( lpInitData->lSysInst, lpInitData->lFontData1, lpInitData->lFontData2 );
 #endif
-#ifdef __USES_UI_KEYPAD_
-	atUIAPI_InitKeypad( lpInitData->lSysInst, lpInitData->lKeyData1, lpInitData->lKeyData2 );
-#endif
 #ifdef __USES_UI_TOUCH_
 	atUIAPI_InitTouchDev( lpInitData->lSysInst, lpInitData->lTouchData1, lpInitData->lTouchData2 );
 #endif
@@ -67,9 +64,6 @@ atBOOL atUIAPI_Initialize( atUIAPI_INIT_DATA *lpInitData )
 #endif
 #ifdef __USES_UI_DEBUG_
 	atUIAPI_InitDebug( lpInitData->lSysInst, lpInitData->lDebugData1, lpInitData->lDebugData2 );
-#endif
-#ifdef __USES_UI_SOUND_
-	atUIAPI_InitSound( lpInitData->lSysInst, lpInitData->lSoundData1, lpInitData->lSoundData2 );
 #endif
 #ifdef __USES_UI_IME_
 	atUIAPI_InitIME( lpInitData->lSysInst, lpInitData->lIMEData1, lpInitData->lIMEData2 );
@@ -98,17 +92,11 @@ void atUIAPI_Finalize(void)
 #ifdef __USES_UI_IME_
     atUIAPI_FinalIME();
 #endif
-#ifdef __USES_UI_SOUND_
-    atUIAPI_FinalSound();
-#endif
 #ifdef __USES_UI_DEBUG_
     atUIAPI_FinalDebug();
 #endif
 #ifdef __USES_UI_PROC_
     atUIAPI_FinalProcessor();
-#endif
-#ifdef __USES_UI_INPUT_
-	atUIAPI_FinalInputDev();
 #endif
 #ifdef __USES_UI_FONT_
 	atUIAPI_FinalFont();
