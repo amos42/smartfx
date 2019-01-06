@@ -39,9 +39,6 @@
 #define atTGRPX_PIXEL_BPP           (16)
 //#define __FIXEDPTR_
 //#define FIXED_RADIX_SIZE    (16)
-#define atTGRPX_DEF_MAX_CANVAS_COUNT	(256)
-#define atTGRPX_DEF_FONT_NAME       _AT("System")
-#define atTGRPX_DEF_FONT_SIZE		(16)
 #endif
 
 /*
@@ -54,7 +51,7 @@
 #include "AT_Types.h"       /* 기본 제공하는 타입 선언 */
 #endif
 #ifndef __AT_REAL_H_
-#include "AT_Real.h"		/* 실수 사용을 위해 필요! */
+//#include "AT_Real.h"		/* 실수 사용을 위해 필요! */
 #endif
 /*#include "AT_Math.h"*/	/* 삼각함수 사용을 위해 필요! */
 
@@ -123,27 +120,12 @@ typedef struct _tagatRGBCOLOR {
 	atBYTE		nBlue;
 } atRGBCOLOR;
 
-#ifndef __DEF_RPOINT_TYPE_
-#define  __DEF_RPOINT_TYPE_
-typedef struct tagatRPOINT {
-    atREAL rX, rY;
-} atRPOINT;
-
-typedef struct tagatRRECT {
-    atREAL rStartX, rStartY;
-    atREAL rEndX, rEndY;
-} atRRECT;
-#endif
-
-
 /* atTGRPX_COLOR 타입과 atTGRPX_PIXEL 타입을 전환을 위한 매크로. 현재 그냥 1:1로 변환하고 있음. */
 #define COLOR_TO_PIXEL(a) ((atTGRPX_PIXEL)(a))
 #define PIXEL_TO_COLOR(a) ((atTGRPX_COLOR)(a))
 
 typedef atBOOL (atTGRPX_FUNC_COORD_CONV)( atLPVOID lpParam, atLONG *lpDesX, atLONG *lpDesY, atLONG nSrcX, atLONG nSrcY );
 typedef atTGRPX_FUNC_COORD_CONV* atLPGRPX_FUNC_COORD_CONV;
-typedef atBOOL (atTGRPX_FUNC_COORD_CONV_REAL)( atLPVOID lpParam, atREAL *lpDesX, atREAL *lpDesY, atREAL rSrcX, atREAL rSrcY );
-typedef atTGRPX_FUNC_COORD_CONV_REAL* atLPGRPX_FUNC_COORD_CONV_REAL;
 
 
 /* Kernel */
@@ -160,86 +142,19 @@ typedef atHANDLE atHGRPX_CANVAS;
 typedef struct _tagatGRPXMNG {
 	atGRPXSCRINFO		ScrInfo;
 
-	atHGRPX_CANVAS 		lstCanvas[atTGRPX_DEF_MAX_CANVAS_COUNT];
-
-   	atDWORD         	dwFontAttr;
-	
-	atLPVOID			lpDefFont;
-
 	atLPVOID			lpTempBuf;
 } atGRPXMNG, *atLPGRPXMNG;
 
 
+atINT			atTGRPX_GetInstanceSize(NOARGS);
 atBOOL  		atTGRPX_Initialize( atLPGRPXMNG lpGrpX, atINT nWidth, atINT nHeight, atINT nBPP, atVOID *pFrameBufPtr, atINT VMemWidth );
 atBOOL  		atTGRPX_SetScreenResolution( atLPGRPXMNG lpGrpX, atINT nWidth, atINT nHeight, atINT VMemWidth );
 atBOOL  		atTGRPX_SetFrameBuffer( atLPGRPXMNG lpGrpX, atLPVOID pFrameBufPtr );
-atVOID            atTGRPX_GetScreenInfo( atLPGRPXMNG lpGrpX, atGRPXSCRINFO *lpScrInfo );
-atTGRPX_COLOR			atTGRPX_GetRGB( atBYTE r, atBYTE g, atBYTE b );
+atVOID          atTGRPX_GetScreenInfo( atLPGRPXMNG lpGrpX, atGRPXSCRINFO *lpScrInfo );
+atTGRPX_COLOR	atTGRPX_GetRGB( atBYTE r, atBYTE g, atBYTE b );
 atBYTE			atTGRPX_GetRValue( atTGRPX_COLOR clColor );
 atBYTE			atTGRPX_GetGValue( atTGRPX_COLOR clColor );
 atBYTE			atTGRPX_GetBValue( atTGRPX_COLOR clColor );
-
-
-/* Font */
-#define atTGRPX_FONT_SIZE_TINY	8   /// 6x8
-#define atTGRPX_FONT_SIZE_SMALL	10  /// 7x10
-#define atTGRPX_FONT_SIZE_MIDDLE	12  /// 8x12
-#define atTGRPX_FONT_SIZE_EXTEND 16	/// 8x16
-#define atTGRPX_FONT_SIZE_LARGE	20  /// 12x20
-
-#define atTGRPX_FONTATTR_NONE                   			(0x0000)
-#define atTGRPX_FONTATTR_OWNERBUFFER    			(0x0001)
-#define atTGRPX_FONTATTR_ROTATABLE         			(0x0002)
-#define atTGRPX_FONTATTR_ROTATABLE_CHANGED         	(0x0004)
-#define atTGRPX_FONTATTR_SIZABLE              			(0x0008)
-#define atTGRPX_FONTATTR_CACHEABLE         			(0x0010)
-
-#define atTGRPX_FS_MASK             (0x03)
-#define atTGRPX_FS_NORMAL         (0x00)
-#define atTGRPX_FS_BOLD              (0x01)
-#define atTGRPX_FS_ITALIC           (0x02)
-
-typedef struct _tagatGLYPHINFO {
-	atDWORD    dwAttr;
-	atINT    nHorizAdvance;
-	atSHORT    nBearingX, nBearingY;
-	atSHORT    nWidth, nHeight;
-	atSHORT    nBPP;
-	atSHORT    nFontWidthBytes;
-	atLPVOID   lpBitmap;
-	atREAL rAdvX, rAdvY;
-} atTGRPX_GLYPHINFO;
-
-typedef struct _tagatTGRPX_FONT {
-	atLPGRPXMNG     	lpGrpX;
-
-   	atTCHAR         	szFontName[32];
-   	atDWORD         	dwAttr;
-   	atDWORD         	dwStyle;
-   	atINT           		nFontBPP;
-
-	atINT			nFontSize;
-	atINT			nAscent, nDescent;
-	atREAL			rAngle;
-
-	atINT           		nRefCount;
-} atTGRPX_FONT, *atLPGRPX_FONT;
-
-atBOOL 		atTGRPX_InitFontMng( atLPGRPXMNG lpGrpX );
-atBOOL 		atTGRPX_CloseFontMng( atLPGRPXMNG lpGrpX );
-atTGRPX_FONT   * atTGRPX_CreateFont( atLPGRPXMNG lpGrpX, atLPTSTR szFontName, atINT nSize, atDWORD dwStyle, atREAL rAngle );
-atVOID            atTGRPX_DestroyFont( atTGRPX_FONT *lpFont );
-atTGRPX_FONT	  * atTGRPX_ReferenceFont( atTGRPX_FONT *lpFont );
-atTGRPX_FONT   * atTGRPX_ReleaseFont( atTGRPX_FONT *lpFont, atBOOL bAutoDestory );
-atVOID            atTGRPX_SetFontStyle( atTGRPX_FONT *lpFont, atINT Style );
-atBOOL		  atTGRPX_SetFontAngle( atTGRPX_FONT *lpFont, atREAL rAngle );
-atINT           atTGRPX_GetStringWidth( atTGRPX_FONT *lpFont, atLPTSTR szStr, atINT iLen );
-atVOID  	    atTGRPX_GetFontSize( atTGRPX_FONT *lpFont, atINT *lpAscent, atINT *lpDescent );
-atINT           atTGRPX_GetFontHeight( atTGRPX_FONT *lpFont );
-atUINT          atTGRPX_GetCharIndex( atTGRPX_FONT *lpFont, atTCHAR Chr );
-atBOOL			atTGRPX_GetGlyphMetric( atTGRPX_FONT *lpFont, atUINT nIndex, atSIZE *lpSize );
-atBOOL			atTGRPX_GetGlyph( atTGRPX_FONT *lpFont, atUINT nIndex, atTGRPX_GLYPHINFO *lpGlyph );
-atVOID			atTGRPX_ReleaseGlyph( atTGRPX_FONT *lpFont, atTGRPX_GLYPHINFO *lpGlyph );
 
 
 /* Canvas */
@@ -247,7 +162,6 @@ atVOID			atTGRPX_ReleaseGlyph( atTGRPX_FONT *lpFont, atTGRPX_GLYPHINFO *lpGlyph 
 typedef struct _tagatTGRPX_CANVAS {
 	atLPGRPXMNG     lpGrpX;
 	atBOOL               bActivate;
-	atINT		     nCanvasID;
 
 //    atREGION       rgnOrgArea;
     atREGION       rgnArea;
@@ -255,32 +169,23 @@ typedef struct _tagatTGRPX_CANVAS {
     atLPVOID        lpVideoPtr;
 	atINT           nBPP;
 	atINT           nVMemWidth;
-	atLPVOID		lpPaletteTable;
-    
-//    atTGRPX_FONT   * lpCurFont;
-    atTGRPX_COLOR         clFrColor, clBgColor;
 } atTGRPX_CANVAS, *atLPGRPX_CANVAS;
 
-atBOOL 		atTGRPX_InitCanvas( atTGRPX_CANVAS *lpCanvas, atLPGRPXMNG lpGrpX, atINT X, atINT Y, atINT Width, atINT Height );
-atVOID    	atTGRPX_ActivateCanvas( atTGRPX_CANVAS *lpCanvas );
-atVOID    	atTGRPX_DeactivateCanvas( atTGRPX_CANVAS *lpCanvas );
-atBOOL		atTGRPX_IsActiveCanvas( atTGRPX_CANVAS *lpCanvas );
-atVOID 		atTGRPX_RecalcCanvas( atTGRPX_CANVAS *lpCanvas );
-atREGION     * atTGRPX_GetCanvasArea( atTGRPX_CANVAS *lpCanvas );
-atINT             atTGRPX_GetBPP( atTGRPX_CANVAS *lpCanvas );
-atTGRPX_PIXEL * atTGRPX_GetFrameBufferPtr( atTGRPX_CANVAS *lpCanvas );
-atTGRPX_PIXEL * atTGRPX_GetFrameBufferPtrXY( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y );
-atINT             atTGRPX_GetVMemWidth( atTGRPX_CANVAS *lpCanvas );
-atRECT       * atTGRPX_GetClipRect( atTGRPX_CANVAS *lpCanvas );
-atRECT 	   * atTGRPX_GetOriginalClipRect( atTGRPX_CANVAS *lpCanvas );
+atINT			atTGRPX_GetCanvasInstanceSize(NOARGS);
+atBOOL 			atTGRPX_InitCanvas( atTGRPX_CANVAS *lpCanvas, atLPGRPXMNG lpGrpX, atINT X, atINT Y, atINT Width, atINT Height );
+atVOID    		atTGRPX_ActivateCanvas( atTGRPX_CANVAS *lpCanvas );
+atVOID    		atTGRPX_DeactivateCanvas( atTGRPX_CANVAS *lpCanvas );
+atBOOL			atTGRPX_IsActiveCanvas( atTGRPX_CANVAS *lpCanvas );
+atVOID 			atTGRPX_RecalcCanvas( atTGRPX_CANVAS *lpCanvas );
+atREGION*		atTGRPX_GetCanvasArea( atTGRPX_CANVAS *lpCanvas );
+atINT           atTGRPX_GetBPP( atTGRPX_CANVAS *lpCanvas );
+atTGRPX_PIXEL*	atTGRPX_GetFrameBufferPtr( atTGRPX_CANVAS *lpCanvas );
+atTGRPX_PIXEL*	atTGRPX_GetFrameBufferPtrXY( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y );
+atINT           atTGRPX_GetVMemWidth( atTGRPX_CANVAS *lpCanvas );
+atRECT*			atTGRPX_GetClipRect( atTGRPX_CANVAS *lpCanvas );
+atRECT*			atTGRPX_GetOriginalClipRect( atTGRPX_CANVAS *lpCanvas );
 atBOOL          atTGRPX_SetClipRect( atTGRPX_CANVAS *lpCanvas, atINT nStartX, atINT nStartY, atINT nEndX, atINT nEndY );
-atBOOL 		atTGRPX_SetClipRect2( atTGRPX_CANVAS *lpCanvas, atRECT *lpClip );
-//atTGRPX_FONT   * atTGRPX_SetCurFont( atTGRPX_CANVAS *lpCanvas, atTGRPX_FONT *lpFont );
-//atTGRPX_FONT   * atTGRPX_GetCurFont( atTGRPX_CANVAS *lpCanvas );
-atTGRPX_COLOR         atTGRPX_SetFrColor( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR color );
-atTGRPX_COLOR         atTGRPX_GetFrColor( atTGRPX_CANVAS *lpCanvas );
-atTGRPX_COLOR         atTGRPX_SetBgColor( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR color );
-atTGRPX_COLOR         atTGRPX_GetBgColor( atTGRPX_CANVAS *lpCanvas );
+atBOOL 			atTGRPX_SetClipRect2( atTGRPX_CANVAS *lpCanvas, atRECT *lpClip );
 atBOOL			atTGRPX_MoveCanvas( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y );
 atBOOL			atTGRPX_ChangeCanvasSize( atTGRPX_CANVAS *lpCanvas, atINT nWidth, atINT nHeight, atINT nFrameWidth );
 atVOID	        atTGRPX_CopyCanvas( atTGRPX_CANVAS *lpCanvas_Des, atINT nDesX, atINT nDesY, atTGRPX_CANVAS *lpCanvas_Src, atINT nX, atINT nY, atINT nWidth, atINT nHeight );
@@ -296,16 +201,14 @@ atVOID	        atTGRPX_CopyCanvas( atTGRPX_CANVAS *lpCanvas_Des, atINT nDesX, at
 #define  atTGRPX_LINEEXT_EXTEND				(atTGRPX_LINEEXT_START_EXTEND | atTGRPX_LINEEXT_END_EXTEND)
 #define  atTGRPX_LINEEXT_ROUNDCAP			(atTGRPX_LINEEXT_START_ROUNDCAP | atTGRPX_LINEEXT_END_ROUNDCAP)
 
-atVOID            atTGRPX_ClearScreen( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR Color );
-atVOID			atTGRPX_ClearScreenAll( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR Color );
-atTGRPX_COLOR        atTGRPX_GetPixel( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y );
-atTGRPX_PIXEL *      atTGRPX_DrawPixel( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y, atTGRPX_COLOR Color );
-atVOID            atTGRPX_DrawHorizLine( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color );
-atINT            atTGRPX_DrawHorizLineDash( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color, atINT nDashLen, atINT nGap, atINT init_gapdash );
-atVOID            atTGRPX_DrawVertLine( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color );
-atINT            atTGRPX_DrawVertLineDash( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color, atINT nDashLen, atINT nGap, atINT init_gapdash );
-atVOID            atTGRPX_DrawRect( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT EndX, atINT EndY, atTGRPX_COLOR Color );
-atVOID            atTGRPX_FillRect( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT EndX, atINT EndY, atTGRPX_COLOR Color );
+atVOID				atTGRPX_ClearScreen( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR Color );
+atVOID				atTGRPX_ClearScreenAll( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR Color );
+atTGRPX_COLOR       atTGRPX_GetPixel( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y );
+atTGRPX_PIXEL *     atTGRPX_DrawPixel( atTGRPX_CANVAS *lpCanvas, atINT X, atINT Y, atTGRPX_COLOR Color );
+atVOID				atTGRPX_DrawHorizLine( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color );
+atVOID				atTGRPX_DrawVertLine( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT Length, atTGRPX_COLOR Color );
+atVOID				atTGRPX_DrawRect( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT EndX, atINT EndY, atTGRPX_COLOR Color );
+atVOID				atTGRPX_FillRect( atTGRPX_CANVAS *lpCanvas, atINT StartX, atINT StartY, atINT EndX, atINT EndY, atTGRPX_COLOR Color );
 
 
 #ifdef __cplusplus

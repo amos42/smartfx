@@ -29,19 +29,6 @@
 #define __FIXEDPTR_
 #define FIXED_RADIX_SIZE    (8)
 
-#define atTGRPX_DEF_MAX_CANVAS_COUNT	(256)
-
-#define atTGRPX_DEF_FONT_NAME       _AT("System")
-#define atTGRPX_DEF_FONT_SIZE		(16)
-
-#define atTGRPX_USES_ALPHABLEND
-
-#define atTGRPX_USES_POLYGON_CACHE
-#define atTGRPX_BASE_POLYGON_ENTRY   (1000)
-#define atTGRPX_MAX_POLYGON_ENTRY   (1000)
-#ifdef atTGRPX_USES_POLYGON_CACHE
-#define atTGRPX_AUTOINC_POLYGON_ENTRY
-#endif
 
 #endif
 

@@ -186,11 +186,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\inc\TinyGrpX.h" />
     <ClInclude Include="..\..\inc\TinyGrpX_CFG.h" />
-    <ClInclude Include="..\..\src\Text\FontEDmp_E.h" />
-    <ClInclude Include="..\..\src\Text\FontMDmp_E.h" />
-    <ClInclude Include="..\..\src\Text\FontSDmp_E.h" />
-    <ClInclude Include="..\..\src\Text\FontTDmp_E.h" />
-    <ClInclude Include="..\..\src\Text\_STR_func.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Graphic\CLRSCR.c" />
@@ -202,9 +197,6 @@
     <ClCompile Include="..\..\src\Graphic\RECT_F.c" />
     <ClCompile Include="..\..\src\kernel\Canvas.c" />
     <ClCompile Include="..\..\src\kernel\G_kernel.c" />
-    <ClCompile Include="..\..\src\Text\FONT.c" />
-    <ClCompile Include="..\..\src\Text\STR.c" />
-    <ClCompile Include="..\..\src\Text\_STR_func.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

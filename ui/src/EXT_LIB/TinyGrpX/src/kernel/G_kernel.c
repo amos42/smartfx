@@ -21,10 +21,14 @@
 #include <string.h>
 
 
+atINT atTGRPX_GetInstanceSize(NOARGS)
+{
+	return sizeof(atGRPXMNG);
+}
+
+
 atBOOL  atTGRPX_Initialize( atLPGRPXMNG lpGrpX, atINT nWidth, atINT nHeight, atINT nBPP, atVOID *pFrameBufPtr, atINT VMemWidth )
 {
-	int i;
-	
 	if( lpGrpX == atNULL ) return atFALSE;
 
 	lpGrpX->ScrInfo.nFrameWidth = nWidth;
@@ -32,9 +36,6 @@ atBOOL  atTGRPX_Initialize( atLPGRPXMNG lpGrpX, atINT nWidth, atINT nHeight, atI
 	lpGrpX->ScrInfo.lpFrameBufferPtr = pFrameBufPtr;
 	lpGrpX->ScrInfo.nBPP = nBPP;
 	lpGrpX->ScrInfo.nVMemWidth = VMemWidth;
-
-	for( i = 0; i < atTGRPX_DEF_MAX_CANVAS_COUNT; i++ )
-		lpGrpX->lstCanvas[i] = atNULL;
 
 	lpGrpX->lpTempBuf = atNULL;
 
@@ -54,21 +55,11 @@ atBOOL  atTGRPX_SetFrameBuffer( atLPGRPXMNG lpGrpX, atLPVOID pFrameBufPtr )
 
 atBOOL  atTGRPX_SetScreenResolution( atLPGRPXMNG lpGrpX, atINT nWidth, atINT nHeight, atINT VMemWidth )
 {
-	int i;
-	atLPGRPX_CANVAS lpCanvas;
-	
 	if( lpGrpX == atNULL ) return atFALSE;
 
 	lpGrpX->ScrInfo.nFrameWidth = nWidth;
 	lpGrpX->ScrInfo.nFrameHeight = nHeight;
 	lpGrpX->ScrInfo.nVMemWidth = VMemWidth;
-
-	for( i = 0; i < atTGRPX_DEF_MAX_CANVAS_COUNT; i++ ){
-		lpCanvas = (atLPGRPX_CANVAS)lpGrpX->lstCanvas[i];
-		if( lpCanvas == atNULL ) continue;
-
-		atTGRPX_RecalcCanvas(lpCanvas);
-	}
 
 	return atTRUE;
 }
@@ -82,7 +73,7 @@ void  atTGRPX_GetScreenInfo( atLPGRPXMNG lpGrpX, atGRPXSCRINFO *lpScrInfo )
 
 atTGRPX_COLOR atTGRPX_GetRGB( atBYTE r, atBYTE g, atBYTE b )
 {
-	return MAKE565( r,g,b );
+	return MAKERGB( r,g,b );
 }
 
 atBYTE atTGRPX_GetRValue( atTGRPX_COLOR nColor )

@@ -22,10 +22,14 @@
 #include "TinyGrpX.h"
 
 
+atINT atTGRPX_GetCanvasInstanceSize(NOARGS)
+{
+	return sizeof(atTGRPX_CANVAS);
+}
+
 atBOOL atTGRPX_InitCanvas( atTGRPX_CANVAS *lpCanvas, atLPGRPXMNG lpGrpX, atINT X, atINT Y, atINT Width, atINT Height )
 {
 	atRECT *clip;
-	atDWORD dwAttr2;
 
 	if( lpCanvas == atNULL ) return atFALSE;
 	if( lpGrpX == atNULL ) return atFALSE;
@@ -34,7 +38,6 @@ atBOOL atTGRPX_InitCanvas( atTGRPX_CANVAS *lpCanvas, atLPGRPXMNG lpGrpX, atINT X
 
 	lpCanvas->lpGrpX = lpGrpX;
 	lpCanvas->bActivate = atTRUE;
-	lpCanvas->nCanvasID = 0x01;
 
 /*
 	lpCanvas->rgnOrgArea.nX = X;
@@ -202,59 +205,10 @@ atBOOL atTGRPX_SetClipRect( atTGRPX_CANVAS *lpCanvas, atINT nStartX, atINT nStar
 	return atTRUE;
 }
 
+
 atBOOL atTGRPX_SetClipRect2( atTGRPX_CANVAS *lpCanvas, atRECT *lpClip )
 {
 	return atTGRPX_SetClipRect( lpCanvas, lpClip->nStartX, lpClip->nStartY, lpClip->nEndX, lpClip->nEndY );
-}
-
-/*
-atTGRPX_FONT	* atTGRPX_SetCurFont( atTGRPX_CANVAS *lpCanvas, atTGRPX_FONT *lpFont )
-{
-	atTGRPX_FONT *old_fnt;
-	
-	if( lpFont == atNULL ) return atNULL;
-
-// 폰트 Gabage Collection 기능 막는다. 차후 아예 없앨지, 다시 살릴지 미정
-//	old_fnt = atTGRPX_ReleaseFont( lpCanvas->lpCurFont, atTRUE );
-//	lpCanvas->lpCurFont = atTGRPX_ReferenceFont( lpFont );
-	old_fnt = lpCanvas->lpCurFont;
-	lpCanvas->lpCurFont = lpFont;
-
-	return old_fnt;
-}
-
-
-atTGRPX_FONT	* atTGRPX_GetCurFont( atTGRPX_CANVAS *lpCanvas )
-{
-	return lpCanvas->lpCurFont;
-}
-*/
-
-atTGRPX_COLOR	atTGRPX_SetFrColor( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR color )
-{
-	atTGRPX_COLOR old_color = lpCanvas->clFrColor;
-	lpCanvas->clFrColor = color;
-	return old_color;
-}
-
-
-atTGRPX_COLOR	atTGRPX_GetFrColor( atTGRPX_CANVAS *lpCanvas )
-{
-	return lpCanvas->clFrColor;
-}
-
-
-atTGRPX_COLOR	atTGRPX_SetBgColor( atTGRPX_CANVAS *lpCanvas, atTGRPX_COLOR color )
-{
-	atTGRPX_COLOR old_color = lpCanvas->clBgColor;
-	lpCanvas->clBgColor = color;
-	return old_color;
-}
-
-
-atTGRPX_COLOR	atTGRPX_GetBgColor( atTGRPX_CANVAS *lpCanvas )
-{
-	return lpCanvas->clBgColor;
 }
 
 
@@ -262,7 +216,6 @@ atBOOL atTGRPX_ChangeCanvasSize( atTGRPX_CANVAS *lpCanvas, atINT nWidth, atINT n
 {
 	atLPGRPX_CANVAS This = (atLPGRPX_CANVAS)lpCanvas;
 	atRECT *clip;
-	void *ptr;
 	
 	if( This == atNULL ) return atFALSE;
 
