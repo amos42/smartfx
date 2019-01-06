@@ -14,12 +14,6 @@
 #ifdef __USES_UI_MEM_
 #include "UI_API/UI_Mem.h"
 #endif
-#ifdef __USES_UI_FONT_
-#include "UI_API/UI_Font.h"
-#endif
-#ifdef __USES_UI_SCR_
-#include "UI_API/UI_GDI.h"
-#endif
 #ifdef __USES_UI_TIMER_
 #include "UI_API/UI_Timer.h"
 #endif
@@ -55,16 +49,6 @@ typedef struct tagatUIAPI_INIT_DATA {
 //#ifdef __USES_UI_MEMORY_
 	atLONG lMemData1;
 	atLONG lMemData2;
-//#endif
-
-//#ifdef __USES_UI_SCR_
-	atLONG lScrData1;
-	atLONG lScrData2;
-//#endif
-
-//#ifdef __USES_UI_FONT_
-	atLONG lFontData1;
-	atLONG lFontData2;
 //#endif
 
 //#ifdef __USES_UI_TIMER_

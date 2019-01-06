@@ -105,7 +105,7 @@ atVOID	OEM_UI_Timer_GetOemFn( OEM_UI_TIMER_T *fnOem )
 atBOOL  atUIAPI_InitTimer( atLONG lSysInst, atLONG lInitData1, atLONG lInitData2 )
 {
 	int i;
-	atBOOL r;
+	//atBOOL r;
 
 	g_timer_cnt = 0;
 	for (i = 0; i < MAX_SOFT_TIMER; i++) g_timers[i].activate = atFALSE;

@@ -11,6 +11,7 @@
 
 #include "UI_Types.h"
 #include "UI_Event.h"
+#include "GDC.h"
 #include "UI_API/UI_API.h"
 #include "A_UI_MSG.h"
 
@@ -137,16 +138,16 @@ typedef atWINOBJPROC* atLPWINOBJNOTIFIER;												/**< WinObj의 Notifier 포인
 */
 typedef struct _tagatWINOBJ {
 	atBOOL				bActivate;				/**< WinObj가 활성화 되었는가 */
-	atDWORD			dwClassID;				/**< 클래스 ID */
+	atDWORD				dwClassID;				/**< 클래스 ID */
 	
 	atHWINOBJ			hOwnerObj;				/**< 여기서 지정한 개체가 소멸할 때, 함께 소멸한다. */
 	atHWINOBJ			hParentObj;				/**< 포함되어 표시될 부모 개체 */
 	atINT				nID;					/**< ID. Unique하지 않다. */
-	atDWORD			dwAttr;					/**< 속성 */
+	atDWORD				dwAttr;					/**< 속성 */
 	atRECT				rect;					/**< 표시될 영역 */
 	
 	atBOOL				bEnable;				/**< enable or disable flag */
-	//atBOOL				bFocus;					/**< 현재 포커스를 가졌는가 */
+	//atBOOL			bFocus;					/**< 현재 포커스를 가졌는가 */
 	atBOOL				bShow;					/**< 화면에 Show, Hide 설정 불변수 */
 	
 	atLONG				nObjDataSize;			/**< 데이터의 크기 */
@@ -156,7 +157,7 @@ typedef struct _tagatWINOBJ {
 
 #ifdef __USES_NOTIFIER
 	atLPWINOBJNOTIFIER	fnObjNotifier;			/**< WinObj의 notifier */
-	atLPVOID			lpObjNotifyData;				/**< 데이터 포인터 */
+	atLPVOID			lpObjNotifyData;		/**< 데이터 포인터 */
 #endif
 
 	atTCHAR				szObjName[atWINOBJ_OBJNAME_LEN+1];		/**< 이름 */
@@ -175,7 +176,7 @@ typedef struct _tagatWINOBJ {
 //	atHCONTAINER		hWinObjMng;
 	atHANDLE			hChildObjMng;			/**< Child 개체의 매니저 */
 
-	atUILIST	    			lpTimerList;				/**< 내장 타이머 리스트 */
+	atUILIST   			lpTimerList;				/**< 내장 타이머 리스트 */
 	
 	void *				lpCreateParam;			/**< 생성시 사용자가 내정한 파라미터 */
 	void *				lpExLayoutData;			/**< 레이아웃을 위해 참고로 사용될 데이터 */
@@ -183,7 +184,7 @@ typedef struct _tagatWINOBJ {
 	atHWINOBJ			hMouseActWinObj;		/**< 현재 동작 중인 마우스 이벤트의 대상 Child 개체 (Real Time) */
 	atBOOL				bMouseDown;			/**< 마우스 버튼이 눌렸는가. (Real Time) */
 	atINT				nMouseDownPosX, nMouseDownPosY;		/**< 마우스 버튼 눌렸을 때의 좌표 (Real Time) */
-	
+
 	atLONG				Tag;					/**< Dummy 용도 */
 } atWINOBJ, *atLPWINOBJ;
 
@@ -310,8 +311,8 @@ void			atWINOBJ_SetSoftKeyIDS( atHWINOBJ hWinObj, atLONG leftIds, atLONG centerI
 void 		atWINOBJ_RealizeSoftKey( atHWINOBJ hWinObj );
 
 atHGDC		atWINOBJ_GetGDC( atHWINOBJ hWinObj );
-void			atWINOBJ_Refresh( atHWINOBJ hWinObj );
-void			atWINOBJ_RefreshClient( atHWINOBJ hWinObj );
+void		atWINOBJ_Refresh( atHWINOBJ hWinObj );
+void		atWINOBJ_RefreshClient( atHWINOBJ hWinObj );
 void 		atWINOBJ_Draw( atHWINOBJ hWinObj, atBOOL bFocused );
 void 		atWINOBJ_DrawRegion( atHWINOBJ hWinObj, atINT nX, atINT nY, atINT nWidth, atINT nHeight, atBOOL bFocused, atBOOL bFlush );
 

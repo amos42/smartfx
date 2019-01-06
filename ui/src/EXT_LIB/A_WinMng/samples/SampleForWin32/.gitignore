@@ -1,0 +1,9 @@
+.vs
+*.pdb
+*.ncb
+*.ilk
+*.aps
+*.plg
+__output/temp
+Debug
+Release

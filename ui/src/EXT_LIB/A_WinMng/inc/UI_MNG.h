@@ -23,13 +23,7 @@
 #include "WinObjPT.h"
 */
 #include "WObjMng.h"
-#include "Control.h"
-#include "CtlMng.h"
-#include "Window.h"
-#include "WinMng.h"
 #include "Msg.h"
-#include "App.h"
-#include "AppMng.h"
 
 #include "SoftKey.h"
 #include "AnnBar.h"

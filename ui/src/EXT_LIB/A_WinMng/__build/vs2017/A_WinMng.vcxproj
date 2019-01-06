@@ -187,25 +187,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Core\AnnBar.c" />
-    <ClCompile Include="..\..\src\Core\App.c" />
-    <ClCompile Include="..\..\src\Core\AppMng.c" />
-    <ClCompile Include="..\..\src\Core\Control.c" />
-    <ClCompile Include="..\..\src\Core\CtlMng.c" />
+    <ClCompile Include="..\..\src\Core\GDC.c" />
     <ClCompile Include="..\..\src\Core\Msg.c" />
     <ClCompile Include="..\..\src\Core\SoftKey.c" />
     <ClCompile Include="..\..\src\Core\UI_Desk.c" />
     <ClCompile Include="..\..\src\Core\UI_Disp.c" />
     <ClCompile Include="..\..\src\Core\UI_Event.c" />
     <ClCompile Include="..\..\src\Core\UI_Kern.c" />
-    <ClCompile Include="..\..\src\Core\Window.c" />
-    <ClCompile Include="..\..\src\Core\WinMng.c" />
     <ClCompile Include="..\..\src\Core\WinObj.c" />
     <ClCompile Include="..\..\src\Core\WObjMng.c" />
     <ClCompile Include="..\..\src\EntryPtr\UI_Entry.c" />
     <ClCompile Include="..\..\src\UI_API\UI_APIs.c" />
     <ClCompile Include="..\..\src\UI_API\UI_Debug.c" />
-    <ClCompile Include="..\..\src\UI_API\UI_Font.c" />
-    <ClCompile Include="..\..\src\UI_API\UI_gdi.c" />
     <ClCompile Include="..\..\src\UI_API\UI_key.c" />
     <ClCompile Include="..\..\src\UI_API\UI_List.c" />
     <ClCompile Include="..\..\src\UI_API\UI_mem.c" />
@@ -218,17 +211,15 @@
     <ClInclude Include="..\..\inc\AnnBar.h" />
     <ClInclude Include="..\..\inc\App.h" />
     <ClInclude Include="..\..\inc\AppMng.h" />
-    <ClInclude Include="..\..\inc\A_UIENG.h" />
     <ClInclude Include="..\..\inc\A_UI_MSG.h" />
-    <ClInclude Include="..\..\inc\Control.h" />
-    <ClInclude Include="..\..\inc\CtlMng.h" />
+    <ClInclude Include="..\..\inc\A_WinMng.h" />
+    <ClInclude Include="..\..\inc\GDC.h" />
     <ClInclude Include="..\..\inc\Msg.h" />
     <ClInclude Include="..\..\inc\SoftKey.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_API.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Cfg.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Debug.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Font.h" />
-    <ClInclude Include="..\..\inc\UI_API\UI_gdi.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_key.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_List.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_mem.h" />
@@ -244,22 +235,13 @@
     <ClInclude Include="..\..\inc\UI_OpDef.h" />
     <ClInclude Include="..\..\inc\UI_Types.h" />
     <ClInclude Include="..\..\inc\UI_Util.h" />
-    <ClInclude Include="..\..\inc\Window.h" />
-    <ClInclude Include="..\..\inc\WinMng.h" />
     <ClInclude Include="..\..\inc\WinObj.h" />
     <ClInclude Include="..\..\inc\WObjMng.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Debug.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h" />
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_GDI.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\inc\Control.inl" />
-    <None Include="..\..\inc\CtlMng.inl" />
-    <None Include="..\..\inc\Window.inl" />
-    <None Include="..\..\inc\WinMng.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

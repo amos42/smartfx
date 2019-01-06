@@ -47,12 +47,6 @@ atBOOL atUIAPI_Initialize( atUIAPI_INIT_DATA *lpInitData )
 #ifdef __USES_UI_TIMER_
 	atUIAPI_InitTimer( lpInitData->lSysInst, lpInitData->lTimerData1, lpInitData->lTimerData2 );
 #endif
-#ifdef __USES_UI_SCR_
-	atUIAPI_InitGraphic( lpInitData->lSysInst, lpInitData->lScrData1, lpInitData->lScrData2 );
-#endif
-#ifdef __USES_UI_FONT_
-	atUIAPI_InitFont( lpInitData->lSysInst, lpInitData->lFontData1, lpInitData->lFontData2 );
-#endif
 #ifdef __USES_UI_TOUCH_
 	atUIAPI_InitTouchDev( lpInitData->lSysInst, lpInitData->lTouchData1, lpInitData->lTouchData2 );
 #endif
@@ -77,26 +71,11 @@ atBOOL atUIAPI_Initialize( atUIAPI_INIT_DATA *lpInitData )
 */
 void atUIAPI_Finalize(void)
 {
-#ifdef __USES_UI_OIC_
-    atUIAPI_FinalOIC();
-#endif
-#ifdef __USES_UI_IME_
-    atUIAPI_FinalIME();
-#endif
 #ifdef __USES_UI_DEBUG_
     atUIAPI_FinalDebug();
 #endif
 #ifdef __USES_UI_PROC_
     atUIAPI_FinalProcessor();
-#endif
-#ifdef __USES_UI_FONT_
-	atUIAPI_FinalFont();
-#endif
-#ifdef __USES_UI_SCR_
-    atUIAPI_FinalGraphic();
-#endif
-#ifdef __USES_UI_RES_
-	atUIAPI_FinalRes();
 #endif
 #ifdef __USES_UI_TIMER_
 	atUIAPI_FinalTimer();

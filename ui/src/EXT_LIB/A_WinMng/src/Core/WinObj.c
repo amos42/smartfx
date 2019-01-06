@@ -522,7 +522,7 @@ atBOOL	atWINOBJ_IsActivate( atHWINOBJ hWinObj )
  @param hWinObj [in] : WinObj의 핸들
  @return WinObj 이름의 String 포인터
 */
-atLPTSTR atWINOBJ_GetName(atHWINDOW hWinObj)
+atLPTSTR atWINOBJ_GetName(atHWINOBJ hWinObj)
 {
 	atLPWINOBJ		lpWinObj = atWINOBJ_GetPtr(hWinObj);
 	
@@ -540,7 +540,7 @@ atLPTSTR atWINOBJ_GetName(atHWINDOW hWinObj)
  @param hWinObj [in] : WinObj의 핸들
  @return WinObj 클래스 이름의 String 포인터
 */
-atLPTSTR atWINOBJ_GetClassName(atHWINDOW hWinObj)
+atLPTSTR atWINOBJ_GetClassName(atHWINOBJ hWinObj)
 {
 	atLPWINOBJ		lpWinObj = atWINOBJ_GetPtr(hWinObj);
 	

@@ -63,12 +63,9 @@ extern "C" {
 #define UI_SPRINTF 				atUIAPI_sprintf
 
 
-atLPTSTR myStringCut( atHGDC hDC, atLPTSTR szIn, atLPTSTR szOut, int nScreenWidth, atBOOL bFlag );
 int     myGetLineNum( atLPTSTR szMsg );
 int     myGetStrLine( atLPTSTR szDestBuffer, atLPTSTR szSrcBuffer, int nLineNo, atTCHAR byDivideCode );
 int     myAdjustStr( int swidth, int sheight, atLPTSTR str, int stidx, void *data, int (*strwidth)(void*,atLPTSTR,int), void (*drawfunc)(void*,int,int,int,atLPTSTR) );
-atDWORD AutoLineDown( atLPTSTR szText, atHFONT hFont, atINT nMaxLen, atLONG lMaxWidth);
-void	GetStringCut( atLPTSTR szOut, int out_size, atLPTSTR szIn, atHFONT hFt, int scr_cx );
 
 #ifdef __USES_MYDEBUG_
 void 	myAssert( atLPTSTR fmt, ... );
@@ -90,27 +87,6 @@ atVOID atUIAPI_ToEmbededRect( atRECT *lpDesRect, atRECT *lpParentRect );
 atVOID atUIAPI_MoveRect(atRECT *lpDesRect, atRECT *lpSrcRect, atINT nX, atINT nY );
 atVOID atUIAPI_OffsetRect(atRECT *lpDesRect, atINT nX, atINT nY );
 
-
-typedef struct _tagatLAYOUTBITMAP {
-	atHBITMAP bmTopLeft,     bmTopCenter,     bmTopRight;
-	atHBITMAP bmMiddleLeft,  bmMiddleCenter,  bmMiddleRight;
-	atHBITMAP bmBottomLeft,  bmBottomCenter,  bmBottomRight;
-} atLAYOUTBITMAP;
-
-atVOID        	atUIAPI_DrawClient1Line( atHGDC hCanvas, atINT nX, atINT nY, atINT nWidth,
-                                     atHBITMAP lpTopLeftBM, atHBITMAP lpTopCenterBM, atHBITMAP lpTopRightBM );
-atVOID        	atUIAPI_DrawClient1LineStretch( atHGDC hCanvas, atINT nX, atINT nY, atINT nWidth, atINT nHeight,
-                                     atHBITMAP lpTopLeftBM, atHBITMAP lpTopCenterBM, atHBITMAP lpTopRightBM );
-atVOID 		atUIAPI_DrawClient1LineVert( atHGDC hCanvas, atINT nX, atINT nY, atINT nHeight, 
-									 atHBITMAP lpTopBM, atHBITMAP lpMiddleBM, atHBITMAP lpBottomBM );
-atVOID 		atUIAPI_DrawClient1LineVertStretch( atHGDC hCanvas, atINT nX, atINT nY, atINT nWidth, atINT nHeight, 
-					atHBITMAP lpTopBM, atHBITMAP lpMiddleBM, atHBITMAP lpBottomBM );
-atVOID       	atUIAPI_DrawClient( atHGDC hCanvas, atINT nX, atINT nY, atINT nWidth, atINT nHeight,
-                                atHBITMAP lpTopLeftBM, atHBITMAP lpTopCenterBM, atHBITMAP lpTopRightBM,
-                                atHBITMAP lpMiddleLeftBM, atHBITMAP lpMiddleCenterBM, atHBITMAP lpMiddleRightBM,
-                                atHBITMAP lpBottomLeftBM, atHBITMAP lpBottomCenterBM, atHBITMAP lpBottomRightBM,
-								atBOOL IsClientDraw	);
-atVOID       	atUIAPI_DrawClient2( atHGDC hCanvas, atINT nX, atINT nY, atINT nWidth, atINT nHeight, atLAYOUTBITMAP *lpLayoutBitmap, atBOOL IsClientDraw );
 
 
 #ifdef __cplusplus

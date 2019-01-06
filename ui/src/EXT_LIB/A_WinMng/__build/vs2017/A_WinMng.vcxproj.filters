@@ -25,15 +25,6 @@
     <ClCompile Include="..\..\src\Core\AnnBar.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Core\App.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\Control.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\CtlMng.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Core\Msg.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,12 +49,6 @@
     <ClCompile Include="..\..\src\Util\UI_Util.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Core\Window.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\WinMng.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Core\WinObj.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -74,12 +59,6 @@
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\UI_API\UI_Debug.c">
-      <Filter>Source Files\UI_API</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\UI_API\UI_Font.c">
-      <Filter>Source Files\UI_API</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\UI_API\UI_gdi.c">
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\UI_API\UI_key.c">
@@ -97,30 +76,21 @@
     <ClCompile Include="..\..\src\UI_API\UI_Timer.c">
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Core\AppMng.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\UI_API\UI_Touch.c">
       <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\GDC.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\inc\A_UI_MSG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\A_UIENG.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\AnnBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\Control.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\CtlMng.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\Msg.h">
@@ -156,12 +126,6 @@
     <ClInclude Include="..\..\inc\UI_Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\Window.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\WinMng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\WinObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -178,9 +142,6 @@
       <Filter>Header Files\UI_API_H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\UI_API\UI_Font.h">
-      <Filter>Header Files\UI_API_H</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\UI_API\UI_gdi.h">
       <Filter>Header Files\UI_API_H</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\UI_API\UI_key.h">
@@ -207,9 +168,6 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEM_inc\OEM_UI_GDI.h">
-      <Filter>Header Files\UI_OEM_H</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
@@ -222,19 +180,11 @@
     <ClInclude Include="..\..\inc\AppMng.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\inc\Control.inl">
+    <ClInclude Include="..\..\inc\A_WinMng.h">
       <Filter>Header Files</Filter>
-    </None>
-    <None Include="..\..\inc\CtlMng.inl">
+    </ClInclude>
+    <ClInclude Include="..\..\inc\GDC.h">
       <Filter>Header Files</Filter>
-    </None>
-    <None Include="..\..\inc\Window.inl">
-      <Filter>Header Files</Filter>
-    </None>
-    <None Include="..\..\inc\WinMng.inl">
-      <Filter>Header Files</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>
