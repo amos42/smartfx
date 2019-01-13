@@ -186,16 +186,12 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Core\AnnBar.c" />
-    <ClCompile Include="..\..\src\Core\GDC.c" />
     <ClCompile Include="..\..\src\Core\Msg.c" />
-    <ClCompile Include="..\..\src\Core\SoftKey.c" />
-    <ClCompile Include="..\..\src\Core\UI_Desk.c" />
     <ClCompile Include="..\..\src\Core\UI_Disp.c" />
     <ClCompile Include="..\..\src\Core\UI_Event.c" />
     <ClCompile Include="..\..\src\Core\UI_Kern.c" />
     <ClCompile Include="..\..\src\Core\WinObj.c" />
-    <ClCompile Include="..\..\src\Core\WObjMng.c" />
+    <ClCompile Include="..\..\src\Core\WinObj2.c" />
     <ClCompile Include="..\..\src\EntryPtr\UI_Entry.c" />
     <ClCompile Include="..\..\src\UI_API\UI_APIs.c" />
     <ClCompile Include="..\..\src\UI_API\UI_Debug.c" />
@@ -208,14 +204,9 @@
     <ClCompile Include="..\..\src\Util\UI_Util.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\inc\AnnBar.h" />
-    <ClInclude Include="..\..\inc\App.h" />
-    <ClInclude Include="..\..\inc\AppMng.h" />
     <ClInclude Include="..\..\inc\A_UI_MSG.h" />
     <ClInclude Include="..\..\inc\A_WinMng.h" />
-    <ClInclude Include="..\..\inc\GDC.h" />
     <ClInclude Include="..\..\inc\Msg.h" />
-    <ClInclude Include="..\..\inc\SoftKey.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_API.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Cfg.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Debug.h" />
@@ -226,7 +217,6 @@
     <ClInclude Include="..\..\inc\UI_API\UI_str.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Timer.h" />
     <ClInclude Include="..\..\inc\UI_API\UI_Touch.h" />
-    <ClInclude Include="..\..\inc\UI_Desk.h" />
     <ClInclude Include="..\..\inc\UI_Disp.h" />
     <ClInclude Include="..\..\inc\UI_Entry.h" />
     <ClInclude Include="..\..\inc\UI_Event.h" />
@@ -236,7 +226,6 @@
     <ClInclude Include="..\..\inc\UI_Types.h" />
     <ClInclude Include="..\..\inc\UI_Util.h" />
     <ClInclude Include="..\..\inc\WinObj.h" />
-    <ClInclude Include="..\..\inc\WObjMng.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Debug.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h" />
     <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h" />

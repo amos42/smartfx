@@ -8,7 +8,7 @@
 */
 #include "UI_Types.h"
 #include "Msg.h"
-#include "Window.h"
+//#include "Window.h"
 #include "UI_Event.h"
 
 

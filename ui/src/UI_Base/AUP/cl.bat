@@ -1,0 +1,1 @@
+call %~dp0/mk.bat clean

@@ -20,6 +20,7 @@ static atREGION g_refresh_region = {0, 0, 0, 0};
 //static atHCRSECTION disp_lock = atNULL;
 static atLPDISPLISTENER g_lpDispFunc = atNULL;
 
+static atREGION g_screen;
 static atRECT g_clip;
 static atBOOL g_clip_flag = atFALSE;
 
@@ -120,6 +121,15 @@ atVOID atUIAPI_FinalDisplayProcessor(void)
     }
 	*/
 }    
+
+
+atVOID atUIAPI_SetScreenInfo(int x, int y, int width, int height)
+{
+	g_screen.nX = x;
+	g_screen.nX = y;
+	g_screen.nWidth = width;
+	g_screen.nHeight = height;
+}
 
 
 /** 

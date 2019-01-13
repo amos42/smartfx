@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{97137efb-bd68-468a-be0b-42e4928da8a6}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\UI_API">
+      <UniqueIdentifier>{f4391ad9-5726-4517-8b8d-222d62bc94a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{03943135-e812-4a51-9f39-9817fa170e0e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\UI_API_H">
+      <UniqueIdentifier>{cd314ff8-84e0-482b-a6b3-7fd20bffbe02}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Header Files\UI_OEM_H">
+      <UniqueIdentifier>{00d4d7d1-2d35-474e-bf09-fcc20a54450a}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Core\AnnBar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\App.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\Control.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\CtlMng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\Msg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\SoftKey.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\UI_Desk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\UI_Disp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\EntryPtr\UI_Entry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\UI_Event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\UI_Kern.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Util\UI_Util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\Window.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\WinMng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\WinObj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\WObjMng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_APIs.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Debug.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_File.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Font.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_gdi.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_IME.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_key.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_List.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_mem.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_OIC.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Proc.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Res.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Sound.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_str.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Timer.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\UI_API\UI_Touch.c">
+      <Filter>Source Files\UI_API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Core\AppMng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\inc\A_UI_MSG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\A_UIENG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\AnnBar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\CtlMng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\Msg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\SoftKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Desk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Disp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Kern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_MNG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_OpDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\WinMng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\WinObj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\WObjMng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_API.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Cfg.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Debug.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_File.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Font.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_gdi.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_IME.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_key.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_List.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_mem.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_OIC.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Proc.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Res.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Sound.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_str.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Timer.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\UI_API\UI_Touch.h">
+      <Filter>Header Files\UI_API_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Debug.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_File.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Font.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_GDI.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_IME.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Key.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Mem.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_OIC.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Proc.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Res.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Sound.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_str.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Timer.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OEM_inc\OEM_UI_Touch.h">
+      <Filter>Header Files\UI_OEM_H</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\AppMng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\inc\Control.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\inc\CtlMng.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\inc\Window.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="..\..\inc\WinMng.inl">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

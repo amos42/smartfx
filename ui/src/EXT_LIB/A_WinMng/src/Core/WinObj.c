@@ -11,6 +11,7 @@
 #include "WinObj.h"
 
 
+/*
 #define atOBJSOFTKEYFLAG_ACTIVATE	(0x8000)
 #define atOBJSOFTKEYFLAG_LEFT  		(1 << 2)
 #define atOBJSOFTKEYFLAG_CENTER		(1 << 1)
@@ -23,7 +24,7 @@
 #define atOBJSOFTKEYFLAG_LEFT_DISABLE   (1 << 7)
 #define atOBJSOFTKEYFLAG_CENTER_DISABLE (1 << 8)
 #define atOBJSOFTKEYFLAG_RIGHT_DISABLE  (1 << 9)
-
+*/
 
 
 static atLPWINOBJ g_lpWinObj_PoolList[atWINOBJ_MAX_WINOBJ_CNT+1] = { atNULL, };
@@ -263,10 +264,12 @@ atBOOL		atWINOBJ_InitWinObj( atHWINOBJ hWinObj, atHWINOBJ hOwnerObj, atDWORD dwC
 	SET_RECT( lpWinObj->rect, 0, 0, 0, 0 );
 	SET_MARGIN( lpWinObj->rtAnchor, atANCHOR_IGNORE, atANCHOR_IGNORE, atANCHOR_IGNORE, atANCHOR_IGNORE );
 
-	lpWinObj->hGDC = atNULL;
-	
-	lpWinObj->hChildObjMng = atNULL;
 	lpWinObj->lpTimerList = atNULL;  // 타이머를 안 쓰는 윈도우는 메모리 절약을 위해
+
+	lpWinObj->lpChildObjList = atUIAPI_CreateList();
+
+	lpWinObj->hCurChildObj = atNULL;
+	lpWinObj->nCurChildObjOrder = -1;
 
 	lpWinObj->bMouseDown = atFALSE;
 	lpWinObj->hMouseActWinObj = atNULL;
@@ -333,8 +336,6 @@ atBOOL	atWINOBJ_PostCreate( atHWINOBJ hWinObj, atINT nWidth, atINT nHeight, atMA
 	atLPWINOBJ		lpWinObj = atWINOBJ_GetPtr(hWinObj);
 	if ( lpWinObj == atNULL ) return atFALSE;
 
-	lpWinObj->hGDC = atUIAPI_CreateGDC( 0, 0, nWidth, nHeight, atUIAPI_GetScreenBPP(), 0L ); 
-	
 	atWINOBJ_ProcessObjProc( hWinObj, OBJMSG_INIT, (long)lpWinObj->lpCreateParam, (long)lpWinObj->lpExLayoutData );
 
 	atWINOBJ_SetAnchor2( hWinObj, rtAnchor );
@@ -394,11 +395,6 @@ void atWINOBJ_Destroy0(atLPWINOBJ lpWinObj)
 	
 //	atWINOBJ_ProcessObjProc(hWinObj, OBJMSG_RELEASE, 0, 0);
 
-	if( lpWinObj->hGDC ){
-	    atUIAPI_DestroyGDC( lpWinObj->hGDC );
-		lpWinObj->hGDC = atNULL;
-	}
-	
 	if( lpWinObj->lpObjData ){
 		UI_MEMFREE(lpWinObj->lpObjData);
 		lpWinObj->lpObjData = atNULL;
@@ -1332,14 +1328,7 @@ atBOOL atWINOBJ_ConvScreenValidateClientRect( atHWINOBJ hWinObj, atRECT *lpDesRe
 
 		*lpDesRect = rect;
 	} else {
-		atREGION rgn;
-		atDESKTOP_GetDesktopArea( atDESKTOP_AREA_CLIENT,  &rgn );
-		REGION2RECT( validerect, rgn );
-		
-		ret = atUIAPI_IsIntersectRect( lpSrcRect, &validerect );
-		if( !ret ) return atFALSE;
-		
-		*lpDesRect = *lpSrcRect;
+		return atFALSE;
 	}
 
 	return atTRUE;
@@ -1385,14 +1374,7 @@ atBOOL atWINOBJ_ConvScreenValidateRect( atHWINOBJ hWinObj, atRECT *lpDesRect, at
 
 		*lpDesRect = rect;
 	} else {
-		atREGION rgn;
-		atDESKTOP_GetDesktopArea( atDESKTOP_AREA_CLIENT,  &rgn );
-		REGION2RECT( validerect, rgn );
-		
-		ret = atUIAPI_IsIntersectRect( lpSrcRect, &validerect );
-		if( !ret ) return atFALSE;
-		
-		*lpDesRect = *lpSrcRect;
+		return atFALSE;
 	}
 
 	return atTRUE;
@@ -1631,6 +1613,8 @@ void	atWINOBJ_SetAnchor2( atHWINOBJ hWinObj, atMARGIN *lprtAnchor )
 }
 
 
+
+#if 0
 /** 
  @brief WinObj의 SoftKey를 활성화시킨다.
  
@@ -1838,6 +1822,7 @@ void atWINOBJ_RealizeSoftKey( atHWINOBJ hWinObj )
 		atSOFTKEY_RefreshSoftKey();			
 	}
 }
+#endif
 
 
 /** 
@@ -2271,51 +2256,45 @@ int atWINOBJ_ProcessObjProc( atHWINOBJ hWinObj, int nMsg, long lParam1, long lPa
  @param hWinObj [in] : WinObj의 핸들
  @return WinObj의 GDC 핸들
 */
-atHGDC atWINOBJ_GetGDC( atHWINOBJ hWinObj )
+atBOOL atWINOBJ_CalcGDCArea( atHWINOBJ hWinObj, atREGION* lpRgn, atRECT* lpScreenClipRect)
 {
 	atLPWINOBJ		lpWinObj = atWINOBJ_GetPtr(hWinObj);
-	atHGDC hGDC;
-	atREGION rgn, rgn2, rgn3;
-	atRECT rct;
+	atREGION rgn, rgn2;
 	atBOOL ret;
 
-	if( lpWinObj == atNULL ) return atNULL;
+	if( lpWinObj == atNULL ) return atFALSE;
 
-	if( !atWINOBJ_IsActivate(hWinObj) ) return atNULL;
-	if( !atWINOBJ_IsVisible(hWinObj) ) return atNULL;
+	if( !atWINOBJ_IsActivate(hWinObj) ) return atFALSE;
+	if( !atWINOBJ_IsVisible(hWinObj) ) return atFALSE;
 	
-	hGDC = lpWinObj->hGDC;
-
 	atWINOBJ_GetRegion( hWinObj, &rgn );
 	rgn.nX = rgn.nY = 0;
 
 	ret = atWINOBJ_ConvScreenValidateRegion( hWinObj, &rgn2, &rgn );
 	if( !ret ){
-		if( hGDC ) atUIAPI_ActivateGDC( hGDC, atFALSE );
-		return atNULL;
+		return atFALSE;
 	}
 
-	atWINOBJ_ConvScreenRegion( hWinObj, &rgn3, &rgn );
-	if( hGDC == atNULL ){
-		hGDC = atUIAPI_CreateGDC( rgn3.nX, rgn3.nY, rgn3.nWidth, rgn3.nHeight, atUIAPI_GetScreenBPP(), 0L );
-		if( hGDC == atNULL ) return atNULL;
-		lpWinObj->hGDC = hGDC;
-	}
+	atWINOBJ_ConvScreenRegion( hWinObj, lpRgn, &rgn );
 	
-	if( hGDC == atNULL ) return atNULL;
-	
-	ret = atUIAPI_SetGDCArea( hGDC, &rgn3 );
-	if( !ret ){
-		atUIAPI_ActivateGDC( hGDC, atFALSE );
-		return atNULL;
+	/*
+	REGION2RECT(clip, *rgnArea);
+	if (atUIAPI_IntersectRect(&clip, &clip, atUIAPI_GetScreenClipRect())) {
+		atUIAPI_MoveRect(&clip, &clip, -rgnArea->nX, -rgnArea->nY);
+		if (tOemFn.fnSetCanvasClipRect != atNULL) {
+			tOemFn.fnSetCanvasClipRect(lpCanvas->lpOemCanvas, &clip);
+		}
+	else {
+		return atFALSE;
 	}
-	rct.nStartX = rgn2.nX - rgn3.nX;
-	rct.nStartY = rgn2.nY - rgn3.nY;
-	rct.nEndX = rct.nStartX + rgn2.nWidth - 1;
-	rct.nEndY = rct.nStartY + rgn2.nHeight - 1;
-	atUIAPI_SetClipRect( hGDC, &rct );
+	*/
 
-	return hGDC;
+	lpScreenClipRect->nStartX = rgn2.nX - lpRgn->nX;
+	lpScreenClipRect->nStartY = rgn2.nY - lpRgn->nY;
+	lpScreenClipRect->nEndX = lpScreenClipRect->nStartX + rgn2.nWidth - 1;
+	lpScreenClipRect->nEndY = lpScreenClipRect->nStartY + rgn2.nHeight - 1;
+
+	return atTRUE;
 }
 
 
@@ -2582,9 +2561,11 @@ void atWINOBJ_RemoveAllChildWinObjs( atHWINOBJ hWinObj )
 	atLPWINOBJ		lpWinObj = atWINOBJ_GetPtr(hWinObj);
 	if( lpWinObj == atNULL ) return;
 	
-	atWINOBJMNG_DestroyWinObjMng( lpWinObj->hChildObjMng );
-	
-	lpWinObj->hChildObjMng = atNULL;
+	atWINOBJ_DestroyAllChildObjs(hWinObj);
+
+	//	atUIAPI_DestroyList( lpWinObj->lpChildObjList, atTRUE );
+	atUIAPI_DestroyList(lpWinObj->lpChildObjList, atFALSE);
+	lpWinObj->lpChildObjList = atNULL;
 }
  
 

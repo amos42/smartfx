@@ -9,9 +9,6 @@
 #include "UI_Types.h"
 #include "Msg.h"
 #include "UI_MNG.h"
-#include "UI_Desk.h"
-#include "WinMng.h"
-#include "Window.h"
 /* Pactory 개념이 불분명해서 제외 
 #include "WinObjPT.h"
 */

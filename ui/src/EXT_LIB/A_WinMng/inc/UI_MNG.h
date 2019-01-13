@@ -25,10 +25,6 @@
 #include "WObjMng.h"
 #include "Msg.h"
 
-#include "SoftKey.h"
-#include "AnnBar.h"
-#include "UI_Desk.h"
-
 #include "UI_Entry.h"
 
 

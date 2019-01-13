@@ -22,16 +22,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Core\AnnBar.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Core\Msg.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\SoftKey.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\UI_Desk.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Core\UI_Disp.c">
@@ -50,9 +41,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Core\WinObj.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\Core\WObjMng.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\UI_API\UI_APIs.c">
@@ -79,7 +67,7 @@
     <ClCompile Include="..\..\src\UI_API\UI_Touch.c">
       <Filter>Source Files\UI_API</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Core\GDC.c">
+    <ClCompile Include="..\..\src\Core\WinObj2.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -87,19 +75,7 @@
     <ClInclude Include="..\..\inc\A_UI_MSG.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\AnnBar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\Msg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\SoftKey.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\UI_Desk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\UI_Disp.h">
@@ -127,9 +103,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\WinObj.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\WObjMng.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\UI_API\UI_API.h">
@@ -177,13 +150,7 @@
     <ClInclude Include="..\..\OEM_inc\OEM_UI_System.h">
       <Filter>Header Files\UI_OEM_H</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\AppMng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\A_WinMng.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\GDC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,7 +11,6 @@
 
 #include "UI_Types.h"
 #include "UI_Event.h"
-#include "GDC.h"
 #include "UI_API/UI_API.h"
 #include "A_UI_MSG.h"
 
@@ -100,7 +99,7 @@ typedef enum {
 #define atOBJATTR_MODAL  	       	(0x80000000)			/**< Modal 속성  */
 #define atOBJATTR_STAYONTOP  	       (0x40000000)			/**< Stay On Top 속성  */
 #define atOBJATTR_FOCUSABLE  		(0x20000000)			/**< Focus 갖는 것 가능 속성  */
-#define atOBJATTR_CHILD  			(0x10000000)			/**< Child 개체 속성 */
+//#define atOBJATTR_CHILD  			(0x10000000)			/**< Child 개체 속성 */
 #define atOBJATTR_USEANCHOR		(0x08000000)			/**< Anchor 사용 속성 */
 #define atOBJATTR_TRANSPARENT  	(0x00008000)			/**< 투명 개체 속성 */
 #define atOBJATTR_EVENTTARGET       	(0x00004000)			/**< 마우스 이벤트의 대상 여부. */
@@ -163,18 +162,20 @@ typedef struct _tagatWINOBJ {
 	atTCHAR				szObjName[atWINOBJ_OBJNAME_LEN+1];		/**< 이름 */
 	atTCHAR				szClassName[atWINOBJ_CLASSNAME_LEN+1];	/**< 클래스 이름 */
 
-	atDWORD			dwSoftkeyFlag;							/**< 유효한 소프트키 플랫 */
+	atDWORD				dwSoftkeyFlag;							/**< 유효한 소프트키 플랫 */
 	atTCHAR				szSoftKey[3][atSOFTKEY_TEXT_LEN+1];		/**< 소프트키 텍스트 */
 	atLONG				nSoftKeyIDS[3];							/**< 소프트키의 IDS */
-
-	atHGDC				hGDC;					/**< GDC 핸들 */
 
 	atMARGIN			rtLayoutMargin;			/**< 클라이언트와의 여백 */
 	atMARGIN			rtAnchor;				/**< Ahcor */
 
 //	atHWINOBJMNG		hWinObjMng;
 //	atHCONTAINER		hWinObjMng;
-	atHANDLE			hChildObjMng;			/**< Child 개체의 매니저 */
+//	atHANDLE			hChildObjMng;			/**< Child 개체의 매니저 */
+	atUILIST			lpChildObjList;			/**< WinObj의 리스트 */
+
+	atHWINOBJ			hCurChildObj;				/**< 현재 포커스를 가진 WinObj */
+	atINT				nCurChildObjOrder;		/**< 현재 포커스를 가진 WinObj의 Index */
 
 	atUILIST   			lpTimerList;				/**< 내장 타이머 리스트 */
 	
@@ -310,7 +311,6 @@ void 		atWINOBJ_GetSoftKeyEnabled( atHWINOBJ hWinObj, atBOOL *pbLeft, atBOOL *pb
 void			atWINOBJ_SetSoftKeyIDS( atHWINOBJ hWinObj, atLONG leftIds, atLONG centerIds, atLONG rightIds);
 void 		atWINOBJ_RealizeSoftKey( atHWINOBJ hWinObj );
 
-atHGDC		atWINOBJ_GetGDC( atHWINOBJ hWinObj );
 void		atWINOBJ_Refresh( atHWINOBJ hWinObj );
 void		atWINOBJ_RefreshClient( atHWINOBJ hWinObj );
 void 		atWINOBJ_Draw( atHWINOBJ hWinObj, atBOOL bFocused );
@@ -332,6 +332,59 @@ void atWINOBJ_PostMessageAllChildWinObjs( atHWINOBJ hWinObj, int nMsg, long lPar
 void atWINOBJ_RemoveAllChildWinObjs( atHWINOBJ hWinObj );
 int atWINOBJ_DrawAllChildWinObjs( atHWINOBJ hWinObj, atBOOL bFocused );
 void atWINOBJ_AdjustAllChildWinObjs( atHWINOBJ hWinObj );
+
+
+
+void		atWINOBJMNG_DestroyWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+
+void 		atWINOBJMNG_DestroyAllWinObjs(atHWINOBJMNG hWinObjMng);
+void 		atWINOBJMNG_DestroyWinObjsEx(atHWINOBJMNG hWinObjMng, atBOOL (*fnIsDel)(atHWINOBJ));
+
+atINT 		atWINOBJMNG_GetWinObjCount(atHWINOBJMNG hWinObjMng);
+atUILIST	atWINOBJMNG_GetWinObjList(atHWINOBJMNG hWinObjMng);
+atHWINOBJ 	atWINOBJMNG_GetWinObjByIndex(atHWINOBJMNG hWinObjMng, int nIndex);
+atINT atWINOBJMNG_GetWinObjIndex(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+
+atBOOL		atWINOBJMNG_RegistWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+atBOOL 		atWINOBJMNG_ReleaseWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+
+atHWINOBJ	atWINOBJMNG_FindTopActiveWinObj(atHWINOBJMNG hWinObjMng);
+atHWINOBJ	atWINOBJMNG_FindTopActiveWinObjEx(atHWINOBJMNG hWinObjMng, atHWINOBJ hExcludeObj);
+atHWINOBJ	atWINOBJMNG_FindWinObjByID(atHWINOBJMNG hWinObjMng, atINT nWinObjID);
+atHWINOBJ	atWINOBJMNG_FindWinObjByName(atHWINOBJMNG hWinObjMng, atLPTSTR szWinObjText);
+atHWINOBJ	atWINOBJMNG_FindWinObjAt(atHWINOBJMNG hWinObjMng, atINT nX, atINT nY);
+
+atHWINOBJ	atWINOBJMNG_GetCurWinObj(atHWINOBJMNG hWinObjMng);
+atHWINOBJ	atWINOBJMNG_SetCurWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+atINT 		atWINOBJMNG_GetCurWinObjOrder(atHWINOBJMNG hWinObjMng);
+atHWINOBJ	atWINOBJMNG_SetTopWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+atHWINOBJ	atWINOBJMNG_SetBottomWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+
+void		atWINOBJMNG_SetDrawFlag(atHWINOBJMNG hWinObjMng, atBOOL IsDraw);
+void 		atWINOBJMNG_ShowWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj, atBOOL bShow);
+
+int		atWINOBJMNG_RedrawAllWinObjEx(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObjBase, atBOOL bFocused);
+int		atWINOBJMNG_RedrawAllWinObj(atHWINOBJMNG hWinObjMng, atBOOL bFocused);
+int 		atWINOBJMNG_RedrawAllWinObjArea(atHWINOBJMNG hWinObjMng, atRECT *rtWinRect, atBOOL bFocused);
+
+atHWINOBJ atWINOBJMNG_GetNextEnabledWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+atHWINOBJ atWINOBJMNG_GetPrevEnabledWinObj(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+
+atBOOL 	atWINOBJMNG_GetAnchorAdjRect(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj, atRECT *pRect);
+atBOOL	atWINOBJMNG_GetAnchorAdjRegion(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj, atREGION *pRegion);
+
+void		atWINOBJMNG_AdjustWinObjArea(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj);
+void		atWINOBJMNG_AdjustAllWinObjArea(atHWINOBJMNG hWinObjMng);
+
+atVOID	atWINOBJMNG_SetWinObjRegion(atHWINOBJMNG hWinObjMng, atHWINOBJ hWinObj, atINT nX, atINT nY, atINT nWidth, atINT nHeight);
+
+atVOID	atWINOBJMNG_SendMessageAllWinObjs(atHWINOBJMNG hWinObjMng, int nMsg, long lParam1, long lParam2);
+atINT	atWINOBJMNG_SendMessageToParentWinObj(atHWINOBJMNG hWinObjMng, int nMsg, long lParam1, long lParam2);
+
+
+
+
+
 
 atHWINOBJTIMER atWINOBJ_AddTimer( atHWINOBJ hWinObj, int id, long interval, atBOOL IsRepeat, atBOOL IsEnable, atBOOL IsFocus );
 atHWINOBJTIMER atWINOBJ_GetTimer( atHWINOBJ hWinObj, int id );
